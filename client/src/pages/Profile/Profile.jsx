@@ -1,3 +1,3 @@
-export function ProfilePage() {
+export function Profile() {
   return <div>ProfilePage</div>;
 }

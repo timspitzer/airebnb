@@ -1,3 +1,3 @@
-export function RoomPage() {
+export function Room() {
   return <div>RoomPage</div>;
 }
