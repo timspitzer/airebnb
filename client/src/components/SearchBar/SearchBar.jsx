@@ -22,14 +22,14 @@ export function SearchBar() {
   };
 
   return (
-    <Toolbar.Root className="SearchBar min-h-14 min-w-xs flex justify-between items-stretch rounded-[1000px] shadow-md border-[0.5px] border-solid border-neutral-100 ">
+    <Toolbar.Root className="search-bar min-h-14 min-w-xs flex justify-between items-stretch rounded-[1000px] shadow-md border-[0.5px] border-solid border-neutral-100">
       <Toolbar.Button className="bg-transparent border-none">
         <div className="flex items-center">
           <div className="pl-5 pr-4">
             <div className="i-radix-icons:magnifying-glass text-xl"></div>
           </div>
           <div>
-            <div className="text-left font-medium">
+            <div className="text-left font-semibold text-sm">
               <span>{destination}</span>
             </div>
             <div>
@@ -48,7 +48,7 @@ export function SearchBar() {
       </Toolbar.Button>
       <Toolbar.Button className="bg-transparent border-none">
         <div className="mx-[10px] w-[36px] h-[36px] flex justify-center items-center rounded-max rounded-full border border-neutral-300 border-solid">
-          <div className="i-gg:options text-lg"></div>
+          <div className="i-gg:options text-lg -scale-x-100"></div>
         </div>
       </Toolbar.Button>
     </Toolbar.Root>

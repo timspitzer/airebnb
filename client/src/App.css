@@ -12,10 +12,13 @@ body {
   font-family: Fira Sans, Circular, -apple-system, BlinkMacSystemFont, Roboto,
     Helvetica Neue, sans-serif;
   font-size: 14px;
-  line-height: 1.43;
   color: #222;
   background-color: #fff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  margin: ;
+  margin: 0;
+}
+
+button {
+  border: none;
 }
