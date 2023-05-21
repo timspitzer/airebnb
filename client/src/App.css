@@ -22,3 +22,10 @@ body {
 button {
   border: none;
 }
+
+.scrollbar-hide {
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

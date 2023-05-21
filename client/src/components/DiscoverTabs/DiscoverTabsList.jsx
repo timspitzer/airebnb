@@ -61,7 +61,7 @@ const tabListItemsWithId = tabListItems.map((item) => {
 
 export function DiscoverTabsList() {
   return (
-    <Tabs.List className="flex gap-3 overflow-x-scroll whitespace-nowrap">
+    <Tabs.List className="scrollbar-hide flex gap-3 overflow-x-scroll whitespace-nowrap">
       {tabListItemsWithId.map((item, index) => {
         return (
           <Tabs.Trigger
