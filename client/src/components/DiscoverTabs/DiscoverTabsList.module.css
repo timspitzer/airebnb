@@ -1,0 +1,7 @@
+.button:hover .indicator {
+  opacity: 0.45;
+}
+
+.button[data-state="active"] .indicator {
+  opacity: 1;
+}
