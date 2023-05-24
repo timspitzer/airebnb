@@ -10,8 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@radix-ui/react-dialog": "^1.0.3",
     "@radix-ui/react-tabs": "^1.0.3",
-    "@radix-ui/react-toolbar": "^1.0.3",
     "@unocss/reset": "^0.51.13",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -27,6 +27,8 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.3.4",
+    "prettier": "^2.8.8",
+    "prettier-plugin-tailwindcss": "^0.3.0",
     "unocss": "^0.51.13",
     "vite": "^4.3.2"
   }
