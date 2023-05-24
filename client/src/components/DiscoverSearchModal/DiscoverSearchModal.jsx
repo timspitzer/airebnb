@@ -2,14 +2,6 @@ import * as Dialog from "@radix-ui/react-dialog";
 import * as Tabs from "@radix-ui/react-tabs";
 import { useState } from "react";
 
-const STAYS_WIDTH = 44;
-const EXPERIENCES_WIDTH = 96;
-
-const underLineClassName = {
-  stays: `will-change-[width,left] absolute h-[2px] bg-[#000000] transition-left transition-width transition-200 w-[${STAYS_WIDTH}px] left-[-80px]`,
-  experiences: `will-change-[width,left] absolute h-[2px] bg-[#000000] transition-left transition-width transition-200 w-[${EXPERIENCES_WIDTH}px] left-[-16px]`,
-};
-
 export function DiscoverSearchModal() {
   const [activeTab, setActiveTab] = useState("stays");
 
@@ -23,21 +15,28 @@ export function DiscoverSearchModal() {
               <Tabs.Trigger
                 onClick={() => setActiveTab("stays")}
                 value="stays"
-                className={`m-t-[9px] m-x-[10px] m-b-[4px] font-600 w-[${STAYS_WIDTH}px] bg-transparent text-[16px] leading-[20px] text-[#717171] data-[state=active]:text-[#000000]`}
+                className={`m-t-[9px] m-x-[10px] m-b-[4px] font-600 w-[44px] bg-transparent text-[16px] leading-[20px] text-[#717171] data-[state=active]:text-[#000000]`}
               >
                 Stays
               </Tabs.Trigger>
               <Tabs.Trigger
                 onClick={() => setActiveTab("experiences")}
                 value="experiences"
-                className={`m-t-[9px] m-x-[10px] m-b-[4px] font-600 w-[${EXPERIENCES_WIDTH}px] bg-transparent text-[16px] leading-[20px] text-[#717171] data-[state=active]:text-[#000000]`}
+                className={`m-t-[9px] m-x-[10px] m-b-[4px] font-600 w-[96px] bg-transparent text-[16px] leading-[20px] text-[#717171] data-[state=active]:text-[#000000]`}
               >
                 Experiences
               </Tabs.Trigger>
             </div>
             <div className="flex h-[2px] w-full justify-center">
               <div className="relative">
-                <div className={underLineClassName[activeTab]}></div>
+                <div
+                  className={`${
+                    activeTab === "stays" ? "left-[-80px] w-[44px]" : ""
+                  }
+                  ${
+                    activeTab === "experiences" ? "left-[-16px] w-[96px]" : ""
+                  } transition-left transition-width transition-200 absolute h-[2px] bg-[#000000] will-change-[width,left]`}
+                ></div>
               </div>
             </div>
           </Tabs.List>
