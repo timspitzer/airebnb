@@ -1,14 +1,14 @@
-import * as Toolbar from "@radix-ui/react-toolbar";
+import * as Dialog from "@radix-ui/react-dialog";
 import { useState } from "react";
 
-function formatDate(date) {
-  // return `${date.getDay()} ${date.getMonth()} ${
-  //   date.getFullYear() === new Date().getFullYear() ? "" : date.getFullYear()
-  // }`;
-  return date.toDateString().slice(4, 9);
+function formatDate(date = new Date()) {
+  const dateString = date.toDateString();
+  return Number(dateString.slice(8, 10)) < 10
+    ? `${dateString.slice(4, 7)} ${dateString.slice(9, 10)} `
+    : dateString.slice(4, 10);
 }
 
-export function SearchBar() {
+export function DiscoverSearchBar() {
   const [destination, setDestination] = useState("Anywhere");
   const [dates, setDates] = useState({
     start: new Date(),
@@ -22,8 +22,8 @@ export function SearchBar() {
   };
 
   return (
-    <Toolbar.Root className="search-bar min-h-14 min-w-xs flex justify-between items-stretch rounded-[1000px] shadow-md border-[0.5px] border-solid border-neutral-100">
-      <Toolbar.Button className="bg-transparent border-none">
+    <div className="discover-search-bar min-h-14 min-w-xs flex justify-between items-stretch rounded-[1000px] shadow-md border-[0.5px] border-solid border-neutral-100">
+      <Dialog.Trigger className="bg-transparent grow">
         <div className="flex items-center">
           <div className="pl-5 pr-4">
             <div className="i-radix-icons:magnifying-glass text-xl"></div>
@@ -45,12 +45,12 @@ export function SearchBar() {
             </div>
           </div>
         </div>
-      </Toolbar.Button>
-      <Toolbar.Button className="bg-transparent border-none">
+      </Dialog.Trigger>
+      <button className="bg-transparent border-none">
         <div className="mx-[10px] w-[36px] h-[36px] flex justify-center items-center rounded-max rounded-full border border-neutral-300 border-solid">
           <div className="i-gg:options text-lg -scale-x-100"></div>
         </div>
-      </Toolbar.Button>
-    </Toolbar.Root>
+      </button>
+    </div>
   );
 }

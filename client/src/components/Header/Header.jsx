@@ -1,9 +1,9 @@
-import { DiscoverTabsList, SearchBar } from "../";
+import { DiscoverTabsList, DiscoverSearchBar } from "../";
 
 export function Header() {
   return (
     <div className="header px-6 pt-4 sticky top-0 bg-neutral-50 shadow-md">
-      <SearchBar></SearchBar>
+      <DiscoverSearchBar></DiscoverSearchBar>
       <DiscoverTabsList></DiscoverTabsList>
     </div>
   );

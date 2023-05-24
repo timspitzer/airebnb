@@ -65,16 +65,16 @@ export function DiscoverTabsList() {
       {tabListItemsWithId.map((item, index) => {
         return (
           <Tabs.Trigger
-            className={`${styles.button} p-0 inline-flex flex-col items-center bg-transparent opacity-60 hover:opacity-100 transition-opacity duration-200 ease-in-out data-[state=active]:opacity-100`}
+            className={`${styles.button} inline-flex flex-col items-center bg-transparent p-0 opacity-60 transition-opacity duration-200 ease-in-out hover:opacity-100 data-[state=active]:opacity-100`}
             key={item.id}
             value={`tab${index + 1}`}
           >
             <div className="m-b-2 m-t-4">
               <img src={item.iconUrl} className="w-[24px]"></img>
-              <div className="text-xs font-semibold m-t-1">{item.name}</div>
+              <div className="m-t-1 text-xs font-semibold">{item.name}</div>
             </div>
             <div
-              className={`${styles.indicator} w-full h-[2px] transition-opacity duration-200 ease-in-out opacity-0 bg-[#000000]`}
+              className={`${styles.indicator} h-[2px] w-full bg-[#000000] opacity-0 transition-opacity duration-200 ease-in-out`}
             ></div>
           </Tabs.Trigger>
         );

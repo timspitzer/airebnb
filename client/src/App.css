@@ -21,6 +21,8 @@ body {
 
 button {
   border: none;
+  cursor: pointer;
+  padding: 0;
 }
 
 .scrollbar-hide {
