@@ -8,7 +8,7 @@ function formatDate(date = new Date()) {
     : dateString.slice(4, 10);
 }
 
-export function DiscoverSearchBar() {
+export function SearchBar() {
   const [destination, setDestination] = useState("Anywhere");
   const [dates, setDates] = useState({
     start: new Date(),
@@ -22,18 +22,18 @@ export function DiscoverSearchBar() {
   };
 
   return (
-    <div className="discover-search-bar min-h-14 min-w-xs flex justify-between items-stretch rounded-[1000px] shadow-md border-[0.5px] border-solid border-neutral-100">
-      <Dialog.Trigger className="bg-transparent grow">
+    <div className="discover-search-bar min-h-14 min-w-xs flex items-stretch justify-between rounded-[1000px] border-[0.5px] border-solid border-neutral-100 shadow-md">
+      <Dialog.Trigger className="grow bg-transparent">
         <div className="flex items-center">
           <div className="pl-5 pr-4">
             <div className="i-radix-icons:magnifying-glass text-xl"></div>
           </div>
           <div>
-            <div className="text-left font-semibold text-sm">
+            <div className="text-left text-sm font-semibold">
               <span>{destination}</span>
             </div>
             <div>
-              <sub className="text-neutral-500 text-xs">
+              <sub className="text-xs text-neutral-500">
                 <span>{displayDates.start}</span>
                 {" – "}
                 <span>{displayDates.end}</span>
@@ -46,9 +46,9 @@ export function DiscoverSearchBar() {
           </div>
         </div>
       </Dialog.Trigger>
-      <button className="bg-transparent border-none">
-        <div className="mx-[10px] w-[36px] h-[36px] flex justify-center items-center rounded-max rounded-full border border-neutral-300 border-solid">
-          <div className="i-gg:options text-lg -scale-x-100"></div>
+      <button className="border-none bg-transparent">
+        <div className="rounded-max mx-[10px] flex h-[36px] w-[36px] items-center justify-center rounded-full border border-solid border-neutral-300">
+          <div className="i-gg:options -scale-x-100 text-lg"></div>
         </div>
       </button>
     </div>

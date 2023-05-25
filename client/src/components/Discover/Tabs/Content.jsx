@@ -1,6 +1,6 @@
 import * as Tabs from "@radix-ui/react-tabs";
 
-export function DiscoverTabsContent() {
+export function TabsContent() {
   return (
     <div className="discover-tabs">
       <Tabs.Content value="tab1">
