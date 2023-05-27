@@ -1,7 +1,7 @@
 import * as Tabs from "@radix-ui/react-tabs";
 import { Accordion } from "../Accordion/Accordion.jsx";
 
-export default function Content() {
+export function TabsContent() {
   return (
     <>
       <Tabs.Content value="stays">

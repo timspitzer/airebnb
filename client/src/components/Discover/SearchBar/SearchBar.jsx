@@ -1,25 +1,10 @@
 import * as Dialog from "@radix-ui/react-dialog";
-import { useState } from "react";
-
-function formatDate(date = new Date()) {
-  const dateString = date.toDateString();
-  return Number(dateString.slice(8, 10)) < 10
-    ? `${dateString.slice(4, 7)} ${dateString.slice(9, 10)} `
-    : dateString.slice(4, 10);
-}
+import { useContext } from "react";
+import { FormDataContext } from "../../../pages/Discover/FormDataContext.js";
 
 export function SearchBar() {
-  const [destination, setDestination] = useState("Anywhere");
-  const [dates, setDates] = useState({
-    start: new Date(),
-    end: new Date(Date.now() + 400000000),
-  });
-  const [guests, setGuests] = useState(1);
-
-  const displayDates = {
-    start: formatDate(dates.start),
-    end: formatDate(dates.end),
-  };
+  const { formData, updateFormData } = useContext(FormDataContext);
+  const { destination, guests, formattedDates } = formData;
 
   return (
     <div className="discover-search-bar min-h-14 min-w-xs flex items-stretch justify-between rounded-[1000px] border-[0.5px] border-solid border-neutral-100 shadow-md">
@@ -34,9 +19,9 @@ export function SearchBar() {
             </div>
             <div>
               <sub className="text-xs text-neutral-500">
-                <span>{displayDates.start}</span>
+                <span>{formattedDates.start}</span>
                 {" – "}
-                <span>{displayDates.end}</span>
+                <span>{formattedDates.end}</span>
                 {" · "}
                 <span>
                   {guests} {guests > 1 ? "guests" : "guest"}
