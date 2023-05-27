@@ -1,6 +1,8 @@
 import * as RadixAccordion from "@radix-ui/react-accordion";
-import { DestinationCard } from "../DestinationCard/DestinationCard.jsx";
-import { useState } from "react";
+import { DestinationCard } from "./DestinationCard.jsx";
+import { useState, useContext } from "react";
+import { FormDataContext } from "../../../../pages/Discover/FormDataContext.js";
+import { Item } from "./Item.jsx";
 
 const DESTINATIONS = [
   {
@@ -45,46 +47,53 @@ const DESTINATIONS_WITH_ID = DESTINATIONS.map((destination) => {
   return { ...destination, id: crypto.randomUUID() };
 });
 
-export function WhereItem() {
+export function WhereItem({ setAccordionValue }) {
   const [isSearchBarFocused, setIsSearchBarFocused] = useState(false);
+  const { formData, updateFormData } = useContext(FormDataContext);
+  const { destination, formattedDates, guests } = formData;
 
   return (
-    <RadixAccordion.Item value="where">
-      <RadixAccordion.Trigger className="m-b-[12px] flex h-full w-full justify-between rounded-[16px] bg-[#ffffff] p-[24px] shadow-md data-[state=open]:hidden">
-        <div>Where</div>
-        <div>I am flexible</div>
-      </RadixAccordion.Trigger>
-      <RadixAccordion.Content className="m-b-[12px] rounded-[16px] bg-[#ffffff] p-[24px] shadow-md">
-        {isSearchBarFocused ? null : (
+    <Item
+      value="where"
+      trigger={{
+        title: "Where",
+        destination: destination === "Anywhere" ? "I'm flexible" : destination,
+      }}
+      itemContent={{
+        title: isSearchBarFocused ? null : (
           <div className="font-600 text-[22px]">Where to?</div>
-        )}
-        <label
-          onFocus={() => setIsSearchBarFocused(true)}
-          className="m-t-[16px] p-x-[20px] flex h-[60px] w-full rounded-[12px] border border-solid border-[#b0b0b0] focus-within:border-0 focus-within:bg-[#f7f7f7]"
-        >
-          <div className="i-radix-icons:magnifying-glass m-r-[10px] h-full text-2xl"></div>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            className="font-600 focus:font-400 w-full text-[14px] focus:text-[#aeaeae]"
-            placeholder="Search destinations"
-          ></input>
-        </label>
-        {isSearchBarFocused ? null : <Destinations></Destinations>}
-      </RadixAccordion.Content>
-    </RadixAccordion.Item>
+        ),
+        content: (
+          <label
+            onFocus={() => setIsSearchBarFocused(true)}
+            className="m-t-[16px] p-x-[20px] flex h-[60px] w-full rounded-[12px] border border-solid border-[#b0b0b0] focus-within:border-0 focus-within:bg-[#f7f7f7]"
+          >
+            <div className="i-radix-icons:magnifying-glass m-r-[10px] h-full text-2xl"></div>
+            <input
+              value={destination}
+              type="text"
+              id="name"
+              name="name"
+              className="font-600 focus:font-400 w-full text-[14px] focus:text-[#aeaeae]"
+              placeholder="Search destinations"
+            ></input>
+          </label>
+        ),
+        additional: isSearchBarFocused ? null : (
+          <div className="m-t-[16px] flex gap-[16px] overflow-x-scroll">
+            {DESTINATIONS_WITH_ID.map((destination) => {
+              return (
+                <DestinationCard
+                  setAccordionValue={setAccordionValue}
+                  key={destination.id}
+                  name={destination.name}
+                  img={destination.img}
+                ></DestinationCard>
+              );
+            })}
+          </div>
+        ),
+      }}
+    ></Item>
   );
-}
-
-function Destinations() {
-  <div className="m-t-20px flex gap-[12px] overflow-x-scroll">
-    {DESTINATIONS_WITH_ID.map((destination) => (
-      <DestinationCard
-        key={destination.id}
-        name={destination.name}
-        img={destination.img}
-      ></DestinationCard>
-    ))}
-  </div>;
 }

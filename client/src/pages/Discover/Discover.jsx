@@ -22,10 +22,10 @@ export function Discover() {
     <div className="discover-page">
       <FormDataContext.Provider value={{ formData, updateFormData }}>
         <Dialog.Root>
+          <SearchModal></SearchModal>
           <Tabs.Root defaultValue="tab1">
             <Header></Header>
             <main>
-              <SearchModal></SearchModal>
               <TabsContent></TabsContent>
             </main>
           </Tabs.Root>

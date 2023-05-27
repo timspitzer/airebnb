@@ -3,17 +3,20 @@ import { WhereItem } from "./WhereItem.jsx";
 import { WhenItem } from "./WhenItem.jsx";
 import { WhoItem } from "./WhoItem.jsx";
 import { Footer } from "./Footer.jsx";
+import { useState } from "react";
 
 export function Accordion() {
+  const [accordionValue, setAccordionValue] = useState("where");
   return (
     <>
       <RadixAccordion.Root
-        defaultValue="where"
+        value={accordionValue}
+        onValueChange={setAccordionValue}
         type="single"
         className="m-t-[15px] m-x-[12px]"
       >
         <form id="search-form">
-          <WhereItem></WhereItem>
+          <WhereItem setAccordionValue={setAccordionValue}></WhereItem>
           <WhenItem></WhenItem>
           <WhoItem></WhoItem>
         </form>
