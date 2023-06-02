@@ -7,7 +7,7 @@ export function WhoItem() {
         Who
       </RadixAccordion.Trigger>
       <RadixAccordion.Content className="m-b-[12px] rounded-[16px] bg-[#ffffff] p-[24px] shadow-md">
-        <div className="text-[22px]">Who's coming?</div>
+        <div className="text-[22px]">Who{"'"}s coming?</div>
         <div>Adults</div>
         <div>Children</div>
         <div>Infants</div>

@@ -1,5 +1,3 @@
-import React from "react";
-
 export function Footer() {
   return (
     <footer className="p-x-[24px] p-y-[12px] border-t-solid fixed bottom-0 flex w-full justify-between border border-[#eeeeee] bg-[#fbfbfb]">

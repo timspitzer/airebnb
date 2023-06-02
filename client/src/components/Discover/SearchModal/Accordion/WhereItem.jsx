@@ -1,13 +1,13 @@
-import * as RadixAccordion from "@radix-ui/react-accordion";
 import { DestinationCard } from "./DestinationCard.jsx";
 import { useState, useContext } from "react";
 import { FormDataContext } from "../../../../pages/Discover/FormDataContext.js";
 import { Item } from "./Item.jsx";
+import { SearchBar } from "../SearchBar/SearchBar.jsx";
 
 const DESTINATIONS = [
   {
     img: "https://a0.muscache.com/pictures/f9ec8a23-ed44-420b-83e5-10ff1f071a13.jpg",
-    name: "I'm flexible",
+    name: "Anywhere",
   },
   {
     img: "https://a0.muscache.com/im/pictures/7b5cf816-6c16-49f8-99e5-cbc4adfd97e2.jpg?im_w=320",
@@ -47,13 +47,16 @@ const DESTINATIONS_WITH_ID = DESTINATIONS.map((destination) => {
   return { ...destination, id: crypto.randomUUID() };
 });
 
-export function WhereItem({ setAccordionValue }) {
-  const [isSearchBarFocused, setIsSearchBarFocused] = useState(false);
+export function WhereItem({
+  setAccordionValue,
+  isSearchBarFocused,
+  setIsSearchBarFocused,
+}) {
   const { formData, updateFormData } = useContext(FormDataContext);
   const { destination, formattedDates, guests } = formData;
-
   return (
     <Item
+      className={isSearchBarFocused ? "fixed left-0 w-full" : ""}
       value="where"
       trigger={{
         title: "Where",
@@ -64,20 +67,10 @@ export function WhereItem({ setAccordionValue }) {
           <div className="font-600 text-[22px]">Where to?</div>
         ),
         content: (
-          <label
-            onFocus={() => setIsSearchBarFocused(true)}
-            className="m-t-[16px] p-x-[20px] flex h-[60px] w-full rounded-[12px] border border-solid border-[#b0b0b0] focus-within:border-0 focus-within:bg-[#f7f7f7]"
-          >
-            <div className="i-radix-icons:magnifying-glass m-r-[10px] h-full text-2xl"></div>
-            <input
-              value={destination}
-              type="text"
-              id="name"
-              name="name"
-              className="font-600 focus:font-400 w-full text-[14px] focus:text-[#aeaeae]"
-              placeholder="Search destinations"
-            ></input>
-          </label>
+          <SearchBar
+            setIsSearchBarFocused={setIsSearchBarFocused}
+            isSearchBarFocused={isSearchBarFocused}
+          ></SearchBar>
         ),
         additional: isSearchBarFocused ? null : (
           <div className="m-t-[16px] flex gap-[16px] overflow-x-scroll">

@@ -23,7 +23,9 @@ export function DestinationCard({ img, name, setAccordionValue }) {
         alt="country"
       />
 
-      <div className="m-l-[2px] m-b-[4px] m-t-[8px] text-[14px]">{name}</div>
+      <div className="m-l-[2px] m-b-[4px] m-t-[8px] text-[14px]">
+        {name === "Anywhere" ? "I'm flexible" : name}
+      </div>
     </button>
   );
 }

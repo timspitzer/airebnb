@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { FormDataContext } from "../../../pages/Discover/FormDataContext.js";
 
 export function SearchBar() {
-  const { formData, updateFormData } = useContext(FormDataContext);
+  const { formData } = useContext(FormDataContext);
   const { destination, guests, formattedDates } = formData;
 
   return (

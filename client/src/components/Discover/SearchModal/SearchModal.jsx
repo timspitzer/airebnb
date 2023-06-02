@@ -2,10 +2,11 @@ import * as Dialog from "@radix-ui/react-dialog";
 import * as Tabs from "@radix-ui/react-tabs";
 import { useState } from "react";
 import { TabsList } from "./Tabs/TabsList.jsx";
-import { TabsContent } from "./Tabs/TabsContent.jsx";
+import { Accordion } from "./Accordion/Accordion.jsx";
 
 export function SearchModal() {
   const [activeTab, setActiveTab] = useState("stays");
+  const [isSearchBarFocused, setIsSearchBarFocused] = useState(false);
 
   return (
     <Dialog.Portal>
@@ -16,12 +17,34 @@ export function SearchModal() {
             activeTab={activeTab}
             setActiveTab={setActiveTab}
           ></TabsList>
-          <TabsContent></TabsContent>
+          <Tabs.Content value="stays">
+            <Accordion
+              setIsSearchBarFocused={setIsSearchBarFocused}
+              isSearchBarFocused={isSearchBarFocused}
+            ></Accordion>
+          </Tabs.Content>
+          <Tabs.Content value="experiences">
+            <Accordion
+              setIsSearchBarFocused={setIsSearchBarFocused}
+              isSearchBarFocused={isSearchBarFocused}
+            ></Accordion>
+          </Tabs.Content>
         </Tabs.Root>
         <Dialog.Description></Dialog.Description>
-        <Dialog.Close className="absolute left-[20px] top-[22px] inline-flex h-[32px] w-[32px] items-center justify-center rounded-full border border-solid border-[#b0b0b0] bg-[#fefefe]">
-          <div className="i-radix-icons:cross-2"></div>
-        </Dialog.Close>
+        <div className="absolute left-[20px] top-[22px] h-[32px] w-[32px] rounded-full border border-solid border-[#b0b0b0] bg-[#fefefe]">
+          {isSearchBarFocused ? (
+            <button
+              className="inline-flex h-full w-full items-center justify-center"
+              onClick={() => setIsSearchBarFocused(false)}
+            >
+              <div className="i-radix-icons:arrow-left"></div>
+            </button>
+          ) : (
+            <Dialog.Close className="inline-flex h-full w-full items-center justify-center">
+              <div className="i-radix-icons:cross-2"></div>
+            </Dialog.Close>
+          )}
+        </div>
       </Dialog.Content>
     </Dialog.Portal>
   );
