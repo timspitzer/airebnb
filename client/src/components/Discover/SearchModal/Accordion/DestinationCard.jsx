@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { FormDataContext } from "../../../../pages/Discover/FormDataContext.js";
+import { FormDataContext } from "../../../../context/FormDataContext.js";
 
 export function DestinationCard({ img, name, setAccordionValue }) {
   const { formData, updateFormData } = useContext(FormDataContext);

@@ -1,6 +1,6 @@
 import { DestinationCard } from "./DestinationCard.jsx";
 import { useState, useContext } from "react";
-import { FormDataContext } from "../../../../pages/Discover/FormDataContext.js";
+import { FormDataContext } from "../../../../context/FormDataContext.js";
 import { Item } from "./Item.jsx";
 import { SearchBar } from "../SearchBar/SearchBar.jsx";
 

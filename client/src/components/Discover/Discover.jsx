@@ -1,15 +1,19 @@
-import {
-  Header,
-  Footer,
-  BottomBar,
-  TabsContent,
-  SearchModal,
-} from "../../components";
 import * as Tabs from "@radix-ui/react-tabs";
 import * as Dialog from "@radix-ui/react-dialog";
 import { useReducer } from "react";
-import { initialFormState, FormDataContext } from "./FormDataContext.js";
-import { UPDATE_FORM_DATA, formDataReducer } from "./reducers.js";
+import { SearchModal } from "./SearchModal/SearchModal.jsx";
+import { Header } from "./Header/Header.jsx";
+import { TabsContent } from "./Tabs/Content.jsx";
+import { Footer } from "../common/Footer.jsx";
+import { BottomBar } from "../common/BottomBar.jsx";
+import {
+  initialFormState,
+  FormDataContext,
+} from "../../context/FormDataContext.js";
+import {
+  UPDATE_FORM_DATA,
+  formDataReducer,
+} from "../../reducer/formDataReducer.js";
 
 export function Discover() {
   const [formData, dispatch] = useReducer(formDataReducer, initialFormState);

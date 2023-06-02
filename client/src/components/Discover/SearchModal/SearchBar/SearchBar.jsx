@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
-import { FormDataContext } from "../../../../pages";
 import { RecentSearches } from "./RecentSearches.jsx";
+import { FormDataContext } from "../../../../context/FormDataContext.js";
 
 export function SearchBar({ setIsSearchBarFocused, isSearchBarFocused }) {
   const { formData, updateFormData } = useContext(FormDataContext);

@@ -1,6 +1,6 @@
 import * as Dialog from "@radix-ui/react-dialog";
 import { useContext } from "react";
-import { FormDataContext } from "../../../pages/Discover/FormDataContext.js";
+import { FormDataContext } from "../../../context/FormDataContext.js";
 
 export function SearchBar() {
   const { formData } = useContext(FormDataContext);

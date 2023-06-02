@@ -1,7 +1,5 @@
-export { Footer } from "./Footer/Footer.jsx";
-export { Header } from "./Discover/Header/Header.jsx";
-export { BottomBar } from "./BottomBar/BottomBar.jsx";
-export { SearchBar } from "./Discover/SearchBar/SearchBar.jsx";
-export { TabsContent } from "./Discover/Tabs/Content.jsx";
-export { SearchModal } from "./Discover/SearchModal/SearchModal.jsx";
-export { List } from "./Discover/Tabs/List.jsx";
+export { Discover } from "./Discover/Discover.jsx";
+export { Login } from "./Login/Login.jsx";
+export { Profile } from "./Profile/Profile.jsx";
+export { Room } from "./Room/Room.jsx";
+export { Wishlists } from "./Wishlists/Wishlists.jsx";

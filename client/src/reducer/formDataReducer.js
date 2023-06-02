@@ -1,4 +1,4 @@
-import { formatDate } from "../../utils/dates/formatDate.js";
+import { formatDate } from "../utils/dates/formatDate.js";
 
 export const UPDATE_FORM_DATA = "UPDATE_FORM_DATA";
 

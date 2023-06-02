@@ -1,4 +1,5 @@
-import { List, SearchBar } from "../..";
+import { SearchBar } from "../SearchBar/SearchBar.jsx";
+import { List } from "../Tabs/List.jsx";
 
 export function Header() {
   return (
