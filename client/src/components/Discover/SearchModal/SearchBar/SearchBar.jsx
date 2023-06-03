@@ -23,7 +23,11 @@ function generateSuggestions(query, places) {
   return slicedSuggestions;
 }
 
-export function SearchBar({ setIsSearchBarFocused, isSearchBarFocused }) {
+export function SearchBar({
+  setIsSearchBarFocused,
+  isSearchBarFocused,
+  setAccordionValue,
+}) {
   const { formData, updateFormData } = useContext(FormDataContext);
   const [searchTerm, setSearchTerm] = useState("");
   const [suggestions, setSuggestions] = useState([]);
@@ -36,12 +40,6 @@ export function SearchBar({ setIsSearchBarFocused, isSearchBarFocused }) {
     const newSuggestions = generateSuggestions(newSearchTerm, places);
 
     setSuggestions(newSuggestions);
-  }
-
-  function handleSuggestionClick(suggestion) {
-    setSearchTerm(suggestion);
-    setSuggestions([]);
-    // Perform search or other action based on the selected suggestion
   }
 
   useEffect(() => {
@@ -90,6 +88,7 @@ export function SearchBar({ setIsSearchBarFocused, isSearchBarFocused }) {
           suggestions={suggestions}
           setSearchTerm={setSearchTerm}
           setIsSearchBarFocused={setIsSearchBarFocused}
+          setAccordionValue={setAccordionValue}
         ></SearchSuggestions>
       ) : null}
     </div>

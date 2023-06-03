@@ -70,6 +70,7 @@ export function WhereItem({
           <SearchBar
             setIsSearchBarFocused={setIsSearchBarFocused}
             isSearchBarFocused={isSearchBarFocused}
+            setAccordionValue={setAccordionValue}
           ></SearchBar>
         ),
         additional: isSearchBarFocused ? null : (

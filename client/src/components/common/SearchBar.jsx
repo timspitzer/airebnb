@@ -1,12 +1,12 @@
 import * as Dialog from "@radix-ui/react-dialog";
 import { useContext } from "react";
-import { FormDataContext } from "../../../context/FormDataContext.js";
+import { FormDataContext } from "../../context/FormDataContext.js";
 
 export function SearchBar() {
   const { formData } = useContext(FormDataContext);
 
   return (
-    <div className="discover-search-bar min-h-14 min-w-xs flex items-stretch justify-between rounded-[1000px] border-[0.5px] border-solid border-neutral-100 shadow-md">
+    <div className="search-bar min-h-14 min-w-xs flex items-stretch justify-between rounded-[1000px] border-[0.5px] border-solid border-neutral-100 shadow-md">
       <Dialog.Trigger className="grow bg-transparent">
         <div className="flex items-center">
           <div className="pl-5 pr-4">

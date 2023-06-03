@@ -1,4 +1,4 @@
-import { SearchBar } from "../SearchBar/SearchBar.jsx";
+import { SearchBar } from "../../common/SearchBar.jsx";
 import { TabsList } from "../Tabs/TabsList.jsx";
 
 export function Header() {

@@ -1,11 +1,19 @@
+import { useContext } from "react";
 import { formatDate } from "../../../../utils/dates/formatDate.js";
 import { ListItem } from "./ListItem.jsx";
+import { FormDataContext } from "../../../../context/FormDataContext.js";
+import { useNavigate } from "react-router-dom";
+import { MAP_SEARCH } from "../../../../router/paths.js";
 
 const names = ["Istanbul", "Munich", "Kairo", "Tokyo", "Berlin"];
 
 const searches = names.map((name, i) => {
   return {
     destination: name,
+    dates: {
+      start: formatDate(Date.now() + i * Math.random() * 1000000000),
+      end: formatDate(Date.now() + i * Math.random() * 2000000000),
+    },
     formattedDates: {
       start: formatDate(Date.now() + i * Math.random() * 1000000000),
       end: formatDate(Date.now() + i * Math.random() * 2000000000),
@@ -14,19 +22,25 @@ const searches = names.map((name, i) => {
   };
 });
 
-const searchesWithId = searches.map((search) => {
-  return {
-    ...search,
-    id: crypto.randomUUID(),
-  };
-});
-
 export function RecentSearches() {
+  const { updateFormData } = useContext(FormDataContext);
+  const navigate = useNavigate();
   return (
     <ul className="list-none p-0">
-      {searchesWithId.map((search) => {
+      {searches.map((search, i) => {
         return (
-          <ListItem key={search.id}>
+          <ListItem
+            key={i}
+            handleClick={(event) => {
+              event.preventDefault();
+              updateFormData({
+                destination: search.destination,
+                dates: search.dates,
+                guests: search.guests,
+              });
+              navigate(MAP_SEARCH);
+            }}
+          >
             <div className="m-r-[16px] flex h-[48px] w-[48px] items-center justify-center rounded-[12px] bg-[#ebebeb]">
               <svg
                 className="inline-block"
