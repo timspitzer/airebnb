@@ -1,6 +1,6 @@
 import * as Tabs from "@radix-ui/react-tabs";
 
-import styles from "./List.module.css"; // Import css modules stylesheet as styles
+import styles from "./TabsList.module.css"; // Import css modules stylesheet as styles
 
 const tabListItems = [
   {
@@ -59,7 +59,7 @@ const tabListItemsWithId = tabListItems.map((item) => {
   return { ...item, id: crypto.randomUUID() };
 });
 
-export function List() {
+export function TabsList() {
   return (
     <Tabs.List className="scrollbar-hide flex gap-3 overflow-x-scroll whitespace-nowrap">
       {tabListItemsWithId.map((item, index) => {

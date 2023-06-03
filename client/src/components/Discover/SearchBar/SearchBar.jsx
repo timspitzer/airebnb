@@ -4,7 +4,6 @@ import { FormDataContext } from "../../../context/FormDataContext.js";
 
 export function SearchBar() {
   const { formData } = useContext(FormDataContext);
-  const { destination, guests, formattedDates } = formData;
 
   return (
     <div className="discover-search-bar min-h-14 min-w-xs flex items-stretch justify-between rounded-[1000px] border-[0.5px] border-solid border-neutral-100 shadow-md">
@@ -15,16 +14,20 @@ export function SearchBar() {
           </div>
           <div>
             <div className="text-left text-sm font-semibold">
-              <span>{destination}</span>
+              <span>
+                {formData.destination.length === 0
+                  ? "Anywhere"
+                  : formData.destination}
+              </span>
             </div>
             <div>
               <sub className="text-xs text-neutral-500">
-                <span>{formattedDates.start}</span>
+                <span>{formData.formattedDates.start}</span>
                 {" – "}
-                <span>{formattedDates.end}</span>
+                <span>{formData.formattedDates.end}</span>
                 {" · "}
                 <span>
-                  {guests} {guests > 1 ? "guests" : "guest"}
+                  {formData.guests} {formData.guests > 1 ? "guests" : "guest"}
                 </span>
               </sub>
             </div>

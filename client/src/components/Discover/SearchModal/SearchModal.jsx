@@ -3,6 +3,7 @@ import * as Tabs from "@radix-ui/react-tabs";
 import { useState } from "react";
 import { TabsList } from "./Tabs/TabsList.jsx";
 import { Accordion } from "./Accordion/Accordion.jsx";
+import { Footer } from "./Footer/Footer.jsx";
 
 export function SearchModal() {
   const [activeTab, setActiveTab] = useState("stays");
@@ -24,10 +25,7 @@ export function SearchModal() {
             ></Accordion>
           </Tabs.Content>
           <Tabs.Content value="experiences">
-            <Accordion
-              setIsSearchBarFocused={setIsSearchBarFocused}
-              isSearchBarFocused={isSearchBarFocused}
-            ></Accordion>
+            <div>Expe</div>
           </Tabs.Content>
         </Tabs.Root>
         <Dialog.Description></Dialog.Description>
@@ -45,6 +43,7 @@ export function SearchModal() {
             </Dialog.Close>
           )}
         </div>
+        {isSearchBarFocused ? null : <Footer></Footer>}
       </Dialog.Content>
     </Dialog.Portal>
   );

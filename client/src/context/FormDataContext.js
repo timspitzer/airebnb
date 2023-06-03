@@ -4,12 +4,12 @@ import { formatDate } from "../utils/dates/formatDate.js";
 export const FormDataContext = createContext();
 
 const INITIAL_DATES = {
-  start: new Date(),
-  end: new Date(Date.now() + 400000000),
+  start: Date.now(),
+  end: Date.now() + 400000000,
 };
 
 export const initialFormState = {
-  destination: "Anywhere",
+  destination: "",
   dates: { start: INITIAL_DATES.start, end: INITIAL_DATES.end },
   formattedDates: {
     start: formatDate(INITIAL_DATES.start),

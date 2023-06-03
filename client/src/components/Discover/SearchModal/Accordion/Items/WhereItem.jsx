@@ -1,13 +1,13 @@
-import { DestinationCard } from "./DestinationCard.jsx";
-import { useState, useContext } from "react";
-import { FormDataContext } from "../../../../context/FormDataContext.js";
-import { Item } from "./Item.jsx";
-import { SearchBar } from "../SearchBar/SearchBar.jsx";
+import { DestinationCard } from "../../DestinationCard/DestinationCard.jsx";
+import { useContext } from "react";
+import { Item } from "../Item.jsx";
+import { SearchBar } from "../../SearchBar/SearchBar.jsx";
+import { FormDataContext } from "../../../../../context/FormDataContext.js";
 
 const DESTINATIONS = [
   {
     img: "https://a0.muscache.com/pictures/f9ec8a23-ed44-420b-83e5-10ff1f071a13.jpg",
-    name: "Anywhere",
+    name: "",
   },
   {
     img: "https://a0.muscache.com/im/pictures/7b5cf816-6c16-49f8-99e5-cbc4adfd97e2.jpg?im_w=320",
@@ -52,15 +52,15 @@ export function WhereItem({
   isSearchBarFocused,
   setIsSearchBarFocused,
 }) {
-  const { formData, updateFormData } = useContext(FormDataContext);
-  const { destination, formattedDates, guests } = formData;
+  const { formData } = useContext(FormDataContext);
+  const { destination } = formData;
   return (
     <Item
       className={isSearchBarFocused ? "fixed left-0 w-full" : ""}
       value="where"
       trigger={{
         title: "Where",
-        destination: destination === "Anywhere" ? "I'm flexible" : destination,
+        destination: destination.length === 0 ? "I'm flexible" : destination,
       }}
       itemContent={{
         title: isSearchBarFocused ? null : (

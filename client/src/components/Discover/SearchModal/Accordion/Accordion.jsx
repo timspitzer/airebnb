@@ -1,8 +1,7 @@
 import * as RadixAccordion from "@radix-ui/react-accordion";
-import { WhereItem } from "./WhereItem.jsx";
-import { WhenItem } from "./WhenItem.jsx";
-import { WhoItem } from "./WhoItem.jsx";
-import { Footer } from "./Footer.jsx";
+import { WhereItem } from "./Items/WhereItem.jsx";
+import { WhenItem } from "./Items/WhenItem.jsx";
+import { WhoItem } from "./Items/WhoItem.jsx";
 import { useState } from "react";
 
 export function Accordion({ isSearchBarFocused, setIsSearchBarFocused }) {
@@ -30,7 +29,6 @@ export function Accordion({ isSearchBarFocused, setIsSearchBarFocused }) {
           <WhoItem></WhoItem>
         </form>
       </RadixAccordion.Root>
-      {isSearchBarFocused ? null : <Footer></Footer>}
     </>
   );
 }

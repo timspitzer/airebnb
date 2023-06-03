@@ -12,9 +12,7 @@ export function SearchBar({ setIsSearchBarFocused, isSearchBarFocused }) {
       >
         <div className="i-radix-icons:magnifying-glass m-r-[10px] h-full text-2xl"></div>
         <input
-          value={
-            formData.destination === "Anywhere" ? "" : formData.destination
-          }
+          value={formData.destination.length === 0 ? "" : formData.destination}
           onChange={(e) => {
             updateFormData({ destination: e.target.value });
           }}
@@ -24,8 +22,7 @@ export function SearchBar({ setIsSearchBarFocused, isSearchBarFocused }) {
           className="font-600 focus:font-400 w-full text-[14px] "
           placeholder="Search destinations"
         ></input>
-        {formData.destination === "Anywhere" ||
-        formData.destination === "" ? null : (
+        {!isSearchBarFocused || formData.destination.length === 0 ? null : (
           <div className="flex items-center">
             <button
               onClick={(e) => {
