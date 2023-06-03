@@ -56,7 +56,7 @@ export function WhereItem({
   const { destination } = formData;
   return (
     <Item
-      className={isSearchBarFocused ? "fixed left-0 w-full" : ""}
+      className={isSearchBarFocused ? "fixed left-0 h-full w-full" : ""}
       value="where"
       trigger={{
         title: "Where",

@@ -1,9 +1,55 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { RecentSearches } from "./RecentSearches.jsx";
 import { FormDataContext } from "../../../../context/FormDataContext.js";
+import { places } from "./places.js";
+import { SearchSuggestions } from "./SearchSuggestions.jsx";
+
+function generateSuggestions(query, places) {
+  if (query.length === 0) return [];
+  const lowerCaseQuery = query.toLowerCase();
+
+  let suggestions = places.filter((place) => {
+    const lowerCasePlace = place.toLowerCase();
+    return lowerCasePlace.startsWith(lowerCaseQuery);
+  });
+  if (suggestions.length < 1) {
+    suggestions = places.filter((place) => {
+      const lowerCasePlace = place.toLowerCase();
+      return lowerCasePlace.includes(lowerCaseQuery);
+    });
+  }
+  const slicedSuggestions = suggestions.slice(0, 5);
+
+  return slicedSuggestions;
+}
 
 export function SearchBar({ setIsSearchBarFocused, isSearchBarFocused }) {
   const { formData, updateFormData } = useContext(FormDataContext);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [suggestions, setSuggestions] = useState([]);
+
+  function handleInputChange(event) {
+    const newSearchTerm = event.target.value;
+    setSearchTerm(newSearchTerm);
+
+    // Generate suggestions based on newSearchTerm
+    const newSuggestions = generateSuggestions(newSearchTerm, places);
+
+    setSuggestions(newSuggestions);
+  }
+
+  function handleSuggestionClick(suggestion) {
+    setSearchTerm(suggestion);
+    setSuggestions([]);
+    // Perform search or other action based on the selected suggestion
+  }
+
+  useEffect(() => {
+    if (formData.destination) {
+      setSearchTerm(formData.destination);
+    }
+  }, []);
+
   return (
     <div>
       <label
@@ -12,10 +58,8 @@ export function SearchBar({ setIsSearchBarFocused, isSearchBarFocused }) {
       >
         <div className="i-radix-icons:magnifying-glass m-r-[10px] h-full text-2xl"></div>
         <input
-          value={formData.destination.length === 0 ? "" : formData.destination}
-          onChange={(e) => {
-            updateFormData({ destination: e.target.value });
-          }}
+          value={searchTerm}
+          onChange={handleInputChange}
           type="text"
           id="name"
           name="name"
@@ -36,7 +80,11 @@ export function SearchBar({ setIsSearchBarFocused, isSearchBarFocused }) {
           </div>
         )}
       </label>
-      {isSearchBarFocused ? <RecentSearches></RecentSearches> : null}
+      {/* {isSearchBarFocused ? <RecentSearches></RecentSearches> : null} */}
+
+      {isSearchBarFocused && searchTerm.length !== 0 ? (
+        <SearchSuggestions suggestions={suggestions}></SearchSuggestions>
+      ) : null}
     </div>
   );
 }

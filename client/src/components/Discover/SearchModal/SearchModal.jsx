@@ -13,12 +13,12 @@ export function SearchModal() {
     <Dialog.Portal>
       <Dialog.Overlay />
       <Dialog.Content className="fixed left-0 top-0 h-full w-full overflow-y-scroll bg-[#f7f7f7] focus:outline-none">
-        <Tabs.Root value={activeTab}>
+        <Tabs.Root value={activeTab} className="flex h-full flex-col">
           <TabsList
             activeTab={activeTab}
             setActiveTab={setActiveTab}
           ></TabsList>
-          <Tabs.Content value="stays">
+          <Tabs.Content value="stays" className="flex-grow">
             <Accordion
               setIsSearchBarFocused={setIsSearchBarFocused}
               isSearchBarFocused={isSearchBarFocused}
@@ -28,7 +28,6 @@ export function SearchModal() {
             <div>Expe</div>
           </Tabs.Content>
         </Tabs.Root>
-        <Dialog.Description></Dialog.Description>
         <div className="absolute left-[20px] top-[22px] h-[32px] w-[32px] rounded-full border border-solid border-[#b0b0b0] bg-[#fefefe]">
           {isSearchBarFocused ? (
             <button
