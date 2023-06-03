@@ -60,7 +60,7 @@ export function WhereItem({
       value="where"
       trigger={{
         title: "Where",
-        destination: destination.length === 0 ? "I'm flexible" : destination,
+        description: destination.length === 0 ? "I'm flexible" : destination,
       }}
       itemContent={{
         title: isSearchBarFocused ? null : (
