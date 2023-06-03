@@ -58,6 +58,7 @@ export function SearchBar({ setIsSearchBarFocused, isSearchBarFocused }) {
       >
         <div className="i-radix-icons:magnifying-glass m-r-[10px] h-full text-2xl"></div>
         <input
+          autoComplete="off"
           value={searchTerm}
           onChange={handleInputChange}
           type="text"
@@ -66,24 +67,30 @@ export function SearchBar({ setIsSearchBarFocused, isSearchBarFocused }) {
           className="font-600 focus:font-400 w-full text-[14px] "
           placeholder="Search destinations"
         ></input>
-        {!isSearchBarFocused || formData.destination.length === 0 ? null : (
+        {isSearchBarFocused && searchTerm.length !== 0 ? (
           <div className="flex items-center">
             <button
               onClick={(e) => {
                 e.preventDefault();
-                updateFormData({ destination: "" });
+                setSearchTerm("");
               }}
               className="rounded-1/2 flex h-[20px] w-[20px] items-center justify-center bg-[#dddddd]"
             >
               <div className="i-radix-icons:cross-2"></div>
             </button>
           </div>
-        )}
+        ) : null}
       </label>
-      {/* {isSearchBarFocused ? <RecentSearches></RecentSearches> : null} */}
+      {isSearchBarFocused && searchTerm.length === 0 ? (
+        <RecentSearches></RecentSearches>
+      ) : null}
 
       {isSearchBarFocused && searchTerm.length !== 0 ? (
-        <SearchSuggestions suggestions={suggestions}></SearchSuggestions>
+        <SearchSuggestions
+          suggestions={suggestions}
+          setSearchTerm={setSearchTerm}
+          setIsSearchBarFocused={setIsSearchBarFocused}
+        ></SearchSuggestions>
       ) : null}
     </div>
   );
