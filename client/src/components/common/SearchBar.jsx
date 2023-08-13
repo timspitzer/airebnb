@@ -20,14 +20,16 @@ export function SearchBar() {
                   : formData.destination}
               </span>
             </div>
-            <div>
+            <div className="text-left">
               <sub className="text-xs text-neutral-500">
-                <span>{formData.formattedDates.start}</span>
-                {" – "}
-                <span>{formData.formattedDates.end}</span>
-                {" · "}
                 <span>
-                  {formData.guests} {formData.guests > 1 ? "guests" : "guest"}
+                  {formData.formattedDates.start && formData.formattedDates.end
+                    ? `${formData.formattedDates.start} – ${formData.formattedDates.end}`
+                    : "Any week"}
+                  {" · "}
+                  {formData.guests === 0 ? "Add guests" : null}
+                  {formData.guests === 1 ? `${formData.guests} guest` : null}
+                  {formData.guests > 1 ? `${formData.guests} guests` : null}
                 </span>
               </sub>
             </div>

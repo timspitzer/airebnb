@@ -11,12 +11,12 @@ const searches = names.map((name, i) => {
   return {
     destination: name,
     dates: {
-      start: formatDate(Date.now() + i * Math.random() * 1000000000),
-      end: formatDate(Date.now() + i * Math.random() * 2000000000),
+      start: formatDate(new Date()),
+      end: formatDate(new Date(Date.now() + i * Math.random() * 2000000000)),
     },
     formattedDates: {
-      start: formatDate(Date.now() + i * Math.random() * 1000000000),
-      end: formatDate(Date.now() + i * Math.random() * 2000000000),
+      start: formatDate(new Date(Date.now() + i * Math.random() * 1000000000)),
+      end: formatDate(new Date(Date.now() + i * Math.random() * 2000000000)),
     },
     guests: Math.round(Math.random() * 10),
   };

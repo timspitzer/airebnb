@@ -7,15 +7,16 @@ export function formDataReducer(state, { type, payload }) {
     case UPDATE_FORM_DATA: {
       let newState = { ...state, ...payload };
 
-      if (payload.dates) {
-        newState = {
-          ...newState,
-          formattedDates: {
-            start: formatDate(payload.dates.start),
-            end: formatDate(payload.dates.end),
-          },
-        };
+      console.log(state);
+      console.log(payload);
+
+      if (payload.dates.start) {
+        newState.formattedDates.start = formatDate(payload.dates.start);
       }
+      if (payload.dates.end) {
+        newState.formattedDates.end = formatDate(payload.dates.end);
+      }
+
       return newState;
     }
     default:
