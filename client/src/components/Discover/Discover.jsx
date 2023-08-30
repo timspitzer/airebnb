@@ -18,6 +18,7 @@ import {
 export function Discover() {
   const [formData, dispatch] = useReducer(formDataReducer, initialFormState);
 
+  // TODO: This wrapper adds ease of use but also confusion, consider not doing this next time
   const updateFormData = (newData) => {
     dispatch({ type: UPDATE_FORM_DATA, payload: newData });
   };

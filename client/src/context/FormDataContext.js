@@ -5,10 +5,7 @@ export const FormDataContext = createContext();
 
 export const initialFormState = {
   destination: "",
-  dates: { start: null, end: null },
-  formattedDates: {
-    start: null,
-    end: null,
-  },
   guests: 0,
+  startDate: null,
+  endDate: null,
 };

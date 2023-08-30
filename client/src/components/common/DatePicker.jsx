@@ -1,51 +1,49 @@
-import { useContext, useEffect, useState } from "react";
+/* eslint-disable react/no-unknown-property */
+import { useContext } from "react";
 import { FormDataContext } from "../../context/FormDataContext.js";
-
-function parseDate(dateString) {
-  const [year, month, date] = dateString.split("-");
-  const dateObj = new Date(year, month, date);
-  return dateObj;
-}
-
-function addLeadingZero(number) {
-  return number < 10 ? `0${number}` : number;
-}
-
-function stringifyDate(dateObj) {
-  if (!dateObj) return "";
-  // const dateObj = new Date(timestamp);
-  const year = dateObj.getFullYear();
-  let month = dateObj.getMonth() + 1;
-  month = addLeadingZero(month);
-  let date = dateObj.getDate();
-  date = addLeadingZero(date);
-  return `${year}-${month}-${date}`;
-}
 
 export function DatePicker() {
   const { formData, updateFormData } = useContext(FormDataContext);
+
+  function onStartDateChange(event) {
+    const date = new Date(
+      event.target.valueAsNumber + new Date().getTimezoneOffset() * 60 * 1000
+    );
+    updateFormData({
+      startDate: date,
+    });
+  }
+
+  function onEndDateChange(event) {
+    const date = new Date(
+      event.target.valueAsNumber + new Date().getTimezoneOffset() * 60 * 1000
+    );
+    updateFormData({
+      endDate: date,
+    });
+  }
+
   return (
     <div>
       <input
-        value={stringifyDate(formData.dates.start)}
-        onChange={(event) => {
-          const date = parseDate(event.target.value);
-          updateFormData({
-            dates: { start: date },
-          });
-        }}
+        id="start"
+        value={
+          formData.startDate
+            ? new Date(formData.startDate).toISOString().split("T")[0]
+            : ""
+        }
+        onChange={onStartDateChange}
         name="start"
         type="date"
       ></input>
       <input
-        value={stringifyDate(formData.dates.end)}
-        onChange={(event) => {
-          const date = parseDate(event.target.value);
-          updateFormData({
-            dates: { end: date },
-          });
-        }}
-        name="start"
+        value={
+          formData.endDate
+            ? new Date(formData.endDate).toISOString().split("T")[0]
+            : ""
+        }
+        onChange={onEndDateChange}
+        name="end"
         type="date"
       ></input>
     </div>

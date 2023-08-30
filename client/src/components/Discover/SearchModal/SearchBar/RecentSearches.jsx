@@ -10,15 +10,9 @@ const names = ["Istanbul", "Munich", "Kairo", "Tokyo", "Berlin"];
 const searches = names.map((name, i) => {
   return {
     destination: name,
-    dates: {
-      start: formatDate(new Date()),
-      end: formatDate(new Date(Date.now() + i * Math.random() * 2000000000)),
-    },
-    formattedDates: {
-      start: formatDate(new Date(Date.now() + i * Math.random() * 1000000000)),
-      end: formatDate(new Date(Date.now() + i * Math.random() * 2000000000)),
-    },
     guests: Math.round(Math.random() * 10),
+    startDate: formatDate(new Date()),
+    endDate: formatDate(new Date(Date.now() + i * Math.random() * 2000000000)),
   };
 });
 
@@ -62,8 +56,7 @@ export function RecentSearches() {
             <div className="flex flex-col justify-center">
               <div className="text-[16px]">{search.destination}</div>
               <sub className="text-[12px] text-[#717171]">
-                {search.formattedDates.start} – {search.formattedDates.end} •{" "}
-                {search.guests} guests
+                {search.startDate} – {search.endDate} • {search.guests} guests
               </sub>
             </div>
           </ListItem>

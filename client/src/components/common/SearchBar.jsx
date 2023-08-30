@@ -1,6 +1,7 @@
 import * as Dialog from "@radix-ui/react-dialog";
 import { useContext } from "react";
 import { FormDataContext } from "../../context/FormDataContext.js";
+import { formatDate } from "../../utils/dates/formatDate.js";
 
 export function SearchBar() {
   const { formData } = useContext(FormDataContext);
@@ -28,8 +29,10 @@ export function SearchBar() {
             <div className="text-left md:inline">
               <sub className="text-xs text-neutral-500 md:hidden">
                 <span>
-                  {formData.formattedDates.start && formData.formattedDates.end
-                    ? `${formData.formattedDates.start} – ${formData.formattedDates.end}`
+                  {formData.startDate && formData.endDate
+                    ? `${formatDate(formData.startDate)} – ${formatDate(
+                        formData.endDate
+                      )}`
                     : "Any week"}
                   {" · "}
                   {formData.guests === 0 ? "Add guests" : null}
@@ -42,8 +45,10 @@ export function SearchBar() {
 
             {/* DESKTOP DATES AND GUESTS */}
             <span className="hidden font-semibold md:inline">
-              {formData.formattedDates.start && formData.formattedDates.end
-                ? `${formData.formattedDates.start} – ${formData.formattedDates.end}`
+              {formData.startDate && formData.endDate
+                ? `${formatDate(formData.startDate)} – ${formatDate(
+                    formData.endDate
+                  )}`
                 : "Any week"}
             </span>
             <span className="hidden md:inline md:hidden">{" · "}</span>

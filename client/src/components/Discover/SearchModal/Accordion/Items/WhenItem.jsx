@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { FormDataContext } from "../../../../../context/FormDataContext.js";
 import { Item } from "../Item.jsx";
 import { DatePicker } from "../../../../common/DatePicker.jsx";
+import { formatDate } from "../../../../../utils/dates/formatDate.js";
 
 export function WhenItem() {
   const { formData } = useContext(FormDataContext);
@@ -11,8 +12,10 @@ export function WhenItem() {
       trigger={{
         title: "When",
         description:
-          formData.formattedDates.start && formData.formattedDates.end
-            ? `${formData.formattedDates.start} - ${formData.formattedDates.end}`
+          formData.startDate && formData.endDate
+            ? `${formatDate(formData.startDate)} - ${formatDate(
+                formData.endDate
+              )}`
             : "Add dates",
       }}
       itemContent={{
