@@ -3,6 +3,12 @@ import { useContext } from "react";
 import { FormDataContext } from "../../context/FormDataContext.js";
 import { formatDate } from "../../utils/dates/formatDate.js";
 
+function DesktopDivider() {
+  return (
+    <div className="hidden h-[60%] w-[1px] bg-[#eeeeee] md:inline-block"></div>
+  );
+}
+
 export function SearchBar() {
   const { formData } = useContext(FormDataContext);
 
@@ -13,7 +19,7 @@ export function SearchBar() {
           <div className="pl-5 pr-4 md:hidden">
             <div className="i-radix-icons:magnifying-glass text-xl"></div>
           </div>
-          <div className="flex h-full items-center gap-2 pl-6">
+          <div className="items-center gap-2 md:flex md:h-full md:pl-6">
             {/* DESTINATION */}
             <div className="text-left text-sm font-semibold md:inline">
               <span>
@@ -22,12 +28,12 @@ export function SearchBar() {
                   : formData.destination}
               </span>
             </div>
-            <div className="inline-block h-[60%] w-[1px] bg-[#eeeeee]"></div>
+            <DesktopDivider></DesktopDivider>
             {/* DESTINATION */}
 
             {/* MOBILE DATES AND GUESTS */}
-            <div className="text-left md:inline">
-              <sub className="text-xs text-neutral-500 md:hidden">
+            <div className="text-left md:hidden">
+              <sub className="text-xs text-neutral-500">
                 <span>
                   {formData.startDate && formData.endDate
                     ? `${formatDate(formData.startDate)} – ${formatDate(
@@ -51,26 +57,24 @@ export function SearchBar() {
                   )}`
                 : "Any week"}
             </span>
-            <span className="hidden md:inline md:hidden">{" · "}</span>
-            <div className="inline-block h-[60%] w-[1px] bg-[#eeeeee]"></div>
-
-            <span className="text-neutral-500">
+            <DesktopDivider></DesktopDivider>
+            <span className="hidden text-neutral-500 md:inline">
               {formData.guests === 0 ? "Add guests" : null}
               {formData.guests === 1 ? `${formData.guests} guest` : null}
               {formData.guests > 1 ? `${formData.guests} guests` : null}
             </span>
             {/* DESKTOP DATES AND GUESTS */}
           </div>
+          <button className="hidden border-none bg-[transparent] md:inline-block">
+            <div className="rounded-max mx-[10px] flex h-[36px] w-[36px] items-center justify-center rounded-full bg-[#ff385c]">
+              <div className="i-radix-icons:magnifying-glass bg-[#FFFFFF] text-lg"></div>
+            </div>
+          </button>
         </div>
       </Dialog.Trigger>{" "}
       <button className="border-none bg-transparent md:hidden">
         <div className="rounded-max mx-[10px] flex h-[36px] w-[36px] items-center justify-center rounded-full border border-solid border-neutral-300">
           <div className="i-gg:options -scale-x-100 text-lg"></div>
-        </div>
-      </button>
-      <button className="border-none bg-[transparent]">
-        <div className="rounded-max mx-[10px] flex h-[36px] w-[36px] items-center justify-center rounded-full bg-[#ff385c]">
-          <div className="i-radix-icons:magnifying-glass bg-[#FFFFFF] text-lg"></div>
         </div>
       </button>
     </div>
