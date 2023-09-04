@@ -7,11 +7,9 @@ export function Item({ value, trigger, itemContent, className }) {
         <div className="font-600 text-[#717171]">{trigger.title}</div>
         <div className="font-600">{trigger.description}</div>
       </RadixAccordion.Trigger>
-      <RadixAccordion.Content className="m-b-[12px] p-y-[24px] h-full rounded-[16px] bg-[#ffffff] shadow-xl">
-        <div className="m-x-[24px]">
-          {itemContent.title}
-          {itemContent.content}
-        </div>
+      <RadixAccordion.Content className="m-b-[12px] p-y-6 h-full rounded-[16px] bg-[#ffffff] shadow-xl">
+        <div className="mx-6">{itemContent.title}</div>
+        {itemContent.content}
         {itemContent.additional}
       </RadixAccordion.Content>
     </RadixAccordion.Item>

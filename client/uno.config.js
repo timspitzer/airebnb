@@ -15,8 +15,9 @@ export default defineConfig({
     // ...
   ],
   theme: {
-    colors: {
-      // ...
+    boxShadow: {
+      "border-1px-grey": "inset 0 0 0 1px #dddddd",
+      "border-2px-black": "inset 0 0 0 2px #000000",
     },
   },
   presets: [

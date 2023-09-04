@@ -25,8 +25,12 @@ export function WhenItem() {
         ),
         content: (
           <>
-            <DatePicker></DatePicker>
-            <PlusMinusDays></PlusMinusDays>
+            <div className="mx-6 my-4">
+              <DatePicker></DatePicker>
+            </div>
+            <div className="border-y-solid border-y-1 border-y-[#ebebeb] py-2">
+              <PlusMinusDays></PlusMinusDays>
+            </div>
             <div>Next steps</div>
           </>
         ),
