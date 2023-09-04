@@ -200,7 +200,7 @@ export function TabsList() {
       <Tabs.List
         onScroll={handleScroll}
         ref={tabListElementRef}
-        className="scrollbar-hide mx-6 flex gap-6 overflow-x-scroll whitespace-nowrap md:mx-20 md:gap-10"
+        className="scrollbar-hide flex gap-6 overflow-x-scroll whitespace-nowrap px-6 md:mx-20 md:gap-10 md:px-0"
       >
         {tabListItems.map((item, index) => (
           <Tabs.Trigger
