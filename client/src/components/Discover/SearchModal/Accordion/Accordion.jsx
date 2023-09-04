@@ -1,7 +1,7 @@
 import * as RadixAccordion from "@radix-ui/react-accordion";
-import { WhereItem } from "./Items/WhereItem.jsx";
-import { WhenItem } from "./Items/WhenItem.jsx";
-import { WhoItem } from "./Items/WhoItem.jsx";
+import { WhereItem } from "./WhereItem.jsx";
+import { WhenItem } from "./WhenItem.jsx";
+import { WhoItem } from "./WhoItem.jsx";
 import { useState } from "react";
 
 export function Accordion({ isSearchBarFocused, setIsSearchBarFocused }) {
