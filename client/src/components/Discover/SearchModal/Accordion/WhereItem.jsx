@@ -1,8 +1,8 @@
-import { DestinationCard } from "../../DestinationCard/DestinationCard.jsx";
+import { DestinationCard } from "../DestinationCard/DestinationCard.jsx";
 import { useContext } from "react";
-import { Item } from "../Item.jsx";
-import { SearchBar } from "../../SearchBar/SearchBar.jsx";
-import { FormDataContext } from "../../../../../context/FormDataContext.js";
+import { Item } from "./Item.jsx";
+import { SearchBar } from "../SearchBar/SearchBar.jsx";
+import { FormDataContext } from "../../../../context/FormDataContext.js";
 
 const DESTINATIONS = [
   {

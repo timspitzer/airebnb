@@ -1,8 +1,9 @@
 import { useContext } from "react";
-import { FormDataContext } from "../../../../../context/FormDataContext.js";
-import { Item } from "../Item.jsx";
-import { DatePicker } from "../../../../common/DatePicker.jsx";
-import { formatDate } from "../../../../../utils/dates/formatDate.js";
+import { FormDataContext } from "../../../../context/FormDataContext.js";
+import { Item } from "./Item.jsx";
+import { DatePicker } from "../../../common/DatePicker.jsx";
+import { formatDate } from "../../../../utils/dates/formatDate.js";
+import { PlusMinusDays } from "./PlusMinusDays.jsx";
 
 export function WhenItem() {
   const { formData } = useContext(FormDataContext);
@@ -25,7 +26,7 @@ export function WhenItem() {
         content: (
           <>
             <DatePicker></DatePicker>
-            <div>Plus Minus Days</div>
+            <PlusMinusDays></PlusMinusDays>
             <div>Next steps</div>
           </>
         ),
