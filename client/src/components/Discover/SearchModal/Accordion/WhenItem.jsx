@@ -31,57 +31,20 @@ export function WhenItem() {
             <div className="border-y-solid border-y-1 border-y-[#ebebeb] py-2">
               <PlusMinusDays></PlusMinusDays>
             </div>
-            <div>Next steps</div>
+            <div className="mx-6 mt-4 flex justify-between">
+              <button
+                onClick={(e) => e.preventDefault()}
+                className="rounded-lg p-[10px] text-[16px] active:scale-95 active:bg-[#f7f7f7]"
+              >
+                <u>Reset</u>
+              </button>
+              <button className="p-x-[24px] p-y-[12px] flex rounded-[8px] bg-[#222222] text-[#ffffff] active:scale-95 active:bg-[#000000]">
+                <span className="font-600 text-[16px]">Next</span>
+              </button>
+            </div>
           </>
         ),
       }}
     ></Item>
   );
 }
-
-//  <RadixAccordion.Item value="when">
-//       <RadixAccordion.Trigger className="m-b-[12px] flex h-full w-full justify-between rounded-[16px] bg-[#ffffff] p-[24px] shadow-md data-[state=open]:hidden">
-//         When
-//       </RadixAccordion.Trigger>
-//       <RadixAccordion.Content className="m-b-[12px] rounded-[16px] bg-[#ffffff] p-[24px] shadow-md">
-//         <div className="text-[22px]">When{"'"}s your trip?</div>
-//         <div>Datepicker</div>
-//         <div>Plus Minus Days</div>
-//         <div>Next steps</div>
-//       </RadixAccordion.Content>
-//     </RadixAccordion.Item>
-
-//  <Item
-//    className={isSearchBarFocused ? "fixed left-0 h-full w-full" : ""}
-//    value="where"
-//    trigger={{
-//      title: "Where",
-//      destination: destination.length === 0 ? "I'm flexible" : destination,
-//    }}
-//    itemContent={{
-//      title: isSearchBarFocused ? null : (
-//        <div className="font-600 text-[22px]">Where to?</div>
-//      ),
-//      content: (
-//        <SearchBar
-//          setIsSearchBarFocused={setIsSearchBarFocused}
-//          isSearchBarFocused={isSearchBarFocused}
-//          setAccordionValue={setAccordionValue}
-//        ></SearchBar>
-//      ),
-//      additional: isSearchBarFocused ? null : (
-//        <div className="m-t-[16px] flex gap-[16px] overflow-x-scroll">
-//          {DESTINATIONS_WITH_ID.map((destination) => {
-//            return (
-//              <DestinationCard
-//                setAccordionValue={setAccordionValue}
-//                key={destination.id}
-//                name={destination.name}
-//                img={destination.img}
-//              ></DestinationCard>
-//            );
-//          })}
-//        </div>
-//      ),
-//    }}
-//  ></Item>;
