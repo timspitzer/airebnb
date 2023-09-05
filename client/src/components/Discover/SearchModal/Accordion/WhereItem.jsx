@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { Item } from "./Item.jsx";
 import { SearchBar } from "../SearchBar/SearchBar.jsx";
 import { FormDataContext } from "../../../../context/FormDataContext.js";
+import { ACCORDION_VALUES } from "../../../../utils/constants.js";
 
 const DESTINATIONS = [
   {
@@ -57,7 +58,7 @@ export function WhereItem({
   return (
     <Item
       className={isSearchBarFocused ? "fixed left-0 h-full w-full" : ""}
-      value="where"
+      value={ACCORDION_VALUES[0]}
       trigger={{
         title: "Where",
         description: destination.length === 0 ? "I'm flexible" : destination,

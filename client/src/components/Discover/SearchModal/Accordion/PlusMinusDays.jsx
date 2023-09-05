@@ -1,28 +1,42 @@
 const DAYS = [0, 1, 2, 3, 7];
 
-const DAYS_TEXT = DAYS.map((day) => {
-  if (day === 0) return "Exact dates";
-  if (day === 1) return `${day} day`;
-  if (day >= 1) return `${day} days`;
+const DAYS_WITH_TEXT = DAYS.map((day) => {
+  if (day === 0) return { day, text: "Exact dates" };
+  if (day === 1) return { day, text: `${day} day` };
+  if (day >= 1) return { day, text: `${day} days` };
 });
 
-export function PlusMinusDays() {
+export function PlusMinusDays({ activePill, setActivePill }) {
+  const handlePillClick = (e) => {
+    e.preventDefault();
+    setActivePill(parseInt(e.currentTarget.value));
+  };
+
   return (
     <div className="scroll scrollbar-hide overflow-x-scroll whitespace-nowrap">
-      {DAYS_TEXT.map((dayText) => (
-        <Pill key={dayText} text={dayText}></Pill>
+      {DAYS_WITH_TEXT.map((day) => (
+        <Pill
+          key={day.day}
+          text={day.text}
+          value={day.day}
+          handlePillClick={handlePillClick}
+          activePill={activePill}
+        ></Pill>
       ))}
     </div>
   );
 }
 
-function Pill({ text }) {
+function Pill({ text, value, handlePillClick, activePill }) {
   return (
     <button
-      onClick={(e) => e.preventDefault()}
-      className="shadow-border-1px-grey focus:shadow-border-2px-black ml-[10px] box-content whitespace-nowrap rounded-full px-3 py-[6px] transition-transform duration-150 first:ml-6 last:mr-6 focus:bg-[#f7f7f7] active:scale-95"
+      value={value}
+      onClick={handlePillClick}
+      className={`shadow-border-1px-grey ml-[10px] box-content whitespace-nowrap rounded-full px-3 py-[6px] first:ml-6 last:mr-6 focus:bg-[#f7f7f7] active:scale-95 ${
+        value === activePill ? "shadow-border-2px-black" : ""
+      }`}
     >
-      {text === DAYS_TEXT[0] ? (
+      {text === DAYS_WITH_TEXT[0] ? (
         ""
       ) : (
         <span className="pr-1">

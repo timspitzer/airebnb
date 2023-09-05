@@ -28,7 +28,7 @@ export function SearchBar({
   isSearchBarFocused,
   setAccordionValue,
 }) {
-  const { formData, updateFormData } = useContext(FormDataContext);
+  const { formData } = useContext(FormDataContext);
   const [searchTerm, setSearchTerm] = useState("");
   const [suggestions, setSuggestions] = useState([]);
 
@@ -49,7 +49,7 @@ export function SearchBar({
   }, []);
 
   return (
-    <div>
+    <div className="mx-6">
       <label
         onFocus={() => setIsSearchBarFocused(true)}
         className="m-t-[16px] p-x-[20px] flex h-[60px] w-full rounded-[12px] border border-solid border-[#b0b0b0] focus-within:border-0 focus-within:bg-[#f7f7f7]"

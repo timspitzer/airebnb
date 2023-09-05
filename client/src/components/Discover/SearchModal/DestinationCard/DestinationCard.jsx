@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { FormDataContext } from "../../../../context/FormDataContext.js";
+import { ACCORDION_VALUES } from "../../../../utils/constants.js";
 
 export function DestinationCard({ img, name, setAccordionValue }) {
   const { formData, updateFormData } = useContext(FormDataContext);
@@ -9,7 +10,7 @@ export function DestinationCard({ img, name, setAccordionValue }) {
       onClick={(e) => {
         e.preventDefault();
         updateFormData({ destination: name });
-        setAccordionValue("when");
+        setAccordionValue(ACCORDION_VALUES[1]);
       }}
       className="first:m-l-[24px] last:m-r-[24px] bg-transparent text-left"
     >

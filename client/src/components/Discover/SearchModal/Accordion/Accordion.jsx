@@ -3,9 +3,10 @@ import { WhereItem } from "./WhereItem.jsx";
 import { WhenItem } from "./WhenItem.jsx";
 import { WhoItem } from "./WhoItem.jsx";
 import { useState } from "react";
+import { ACCORDION_VALUES } from "../../../../utils/constants.js";
 
 export function Accordion({ isSearchBarFocused, setIsSearchBarFocused }) {
-  const [accordionValue, setAccordionValue] = useState("where");
+  const [accordionValue, setAccordionValue] = useState(ACCORDION_VALUES[0]);
   return (
     <>
       <RadixAccordion.Root
@@ -20,7 +21,7 @@ export function Accordion({ isSearchBarFocused, setIsSearchBarFocused }) {
             isSearchBarFocused={isSearchBarFocused}
             setIsSearchBarFocused={setIsSearchBarFocused}
           ></WhereItem>
-          <WhenItem></WhenItem>
+          <WhenItem setAccordionValue={setAccordionValue}></WhenItem>
           <WhoItem></WhoItem>
         </form>
       </RadixAccordion.Root>

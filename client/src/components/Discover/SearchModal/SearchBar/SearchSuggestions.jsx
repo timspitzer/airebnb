@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { ListItem } from "./ListItem.jsx";
 import { FormDataContext } from "../../../../context/FormDataContext.js";
+import { ACCORDION_VALUES } from "../../../../utils/constants.js";
 
 export function SearchSuggestions({
   suggestions,
@@ -20,7 +21,7 @@ export function SearchSuggestions({
               setSearchTerm(suggestion);
               setIsSearchBarFocused(false);
               updateFormData({ destination: suggestion });
-              setAccordionValue("when");
+              setAccordionValue(ACCORDION_VALUES[1]);
             }}
           >
             <div className="m-r-[16px] flex h-[48px] w-[48px] items-center justify-center rounded-[12px] bg-[#ebebeb]">
