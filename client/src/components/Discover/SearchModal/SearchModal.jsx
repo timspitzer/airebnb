@@ -13,7 +13,7 @@ export function SearchModal() {
     <Dialog.Portal>
       <Dialog.Overlay />
       <Dialog.Content className="fixed left-0 top-0 h-full w-full overflow-y-scroll bg-[#f7f7f7] focus:outline-none">
-        <Tabs.Root value={activeTab} className="flex h-full flex-col">
+        <Tabs.Root value={activeTab} className="flex h-full flex-col md:px-96">
           <TabsList
             activeTab={activeTab}
             setActiveTab={setActiveTab}

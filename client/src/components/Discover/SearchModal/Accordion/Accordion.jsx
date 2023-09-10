@@ -13,7 +13,7 @@ export function Accordion({ isSearchBarFocused, setIsSearchBarFocused }) {
         value={accordionValue}
         onValueChange={setAccordionValue}
         type="single"
-        className="p-t-[15px] m-x-[12px] h-full"
+        className="mx-[12px] h-full pt-[15px] md:mx-[0]"
       >
         <form id="search-form" className="h-full">
           <WhereItem
