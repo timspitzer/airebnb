@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 import * as Tabs from "@radix-ui/react-tabs";
 import styles from "./TabsList.module.css";
-import { useCategories } from "../../../hooks/useCategories";
+import { categories } from "./categories";
 
 const NUMBER_OF_ITEMS_TO_SCROLL = 5;
 
@@ -15,7 +15,6 @@ export function TabsList() {
   const tabListElementRef = useRef(null);
   const [isAtStart, setIsAtStart] = useState(true);
   const [isAtEnd, setIsAtEnd] = useState(false);
-  const categories = useCategories();
 
   const handleScroll = () => {
     if (tabListElementRef.current) {
