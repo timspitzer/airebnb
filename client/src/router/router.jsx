@@ -1,21 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import {
-  Discover,
-  Login,
-  MapSearch,
-  Profile,
-  Room,
-  Wishlists,
-} from "../components/index.js";
-import {
-  FALLBACK,
-  LOGIN,
-  MAP_SEARCH,
-  ROOM,
-  ROOT,
-  USER,
-  WISHLISTS,
-} from "./paths.js";
+import { Discover, Login, MapSearch, Rooms, Users } from "../pages/pages.js";
+import { FALLBACK, LOGIN, MAP_SEARCH, ROOMS, ROOT, USERS } from "./paths.js";
 
 export const Router = () => {
   return (
@@ -23,9 +8,8 @@ export const Router = () => {
       <Routes>
         <Route path={ROOT} element={<Discover />} />
         <Route path={LOGIN} element={<Login />} />
-        <Route path={ROOM} element={<Room />} />
-        <Route path={USER} element={<Profile />} />
-        <Route path={WISHLISTS} element={<Wishlists />} />
+        <Route path={ROOMS} element={<Rooms />} />
+        <Route path={USERS} element={<Users />} />
         <Route path={MAP_SEARCH} element={<MapSearch />} />
         <Route path={FALLBACK} element={<Navigate to="/" replace />} />
       </Routes>
