@@ -65,11 +65,11 @@ export function SearchBar() {
             </span>
             {/* DESKTOP DATES AND GUESTS */}
           </div>
-          <button className="hidden border-none bg-[transparent] md:inline-block">
+          <div className="hidden border-none bg-[transparent] md:inline-block">
             <div className="rounded-max mx-[10px] flex h-[36px] w-[36px] items-center justify-center rounded-full bg-[#ff385c]">
               <div className="i-radix-icons:magnifying-glass bg-[#FFFFFF] text-lg"></div>
             </div>
-          </button>
+          </div>
         </div>
       </Dialog.Trigger>{" "}
       <button className="border-none bg-transparent md:hidden">

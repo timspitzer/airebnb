@@ -1,17 +1,18 @@
 import * as Tabs from "@radix-ui/react-tabs";
+import { useCategories } from "../../../hooks/useCategories";
 
 export function TabsContent() {
+  const categories = useCategories();
+
   return (
     <div className="discover-tabs">
-      <Tabs.Content value="tab1">
-        <div className="h-900px bg-cyan-400"></div>
-      </Tabs.Content>
-      <Tabs.Content value="tab2">
-        <div className="h-900px bg-yellow-400"></div>
-      </Tabs.Content>
-      <Tabs.Content value="tab3">
-        <div className="h-900px bg-red-400"></div>
-      </Tabs.Content>
+      {categories.map(({ name, iconUrl }) => {
+        return (
+          <Tabs.Content key={name} value={name}>
+            <div className="h-900px">{name}</div>
+          </Tabs.Content>
+        );
+      })}
     </div>
   );
 }
