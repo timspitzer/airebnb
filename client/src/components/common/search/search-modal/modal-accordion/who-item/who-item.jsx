@@ -1,6 +1,6 @@
 import { ACCORDION_STATES } from "../accordion-states.js";
 import { AccordionItem } from "../accordion-item/accordion-item.jsx";
-import { FormDataContext } from "../../../../../../context/FormDataContext.js";
+import { FormDataContext } from "../../../../../../context/form-data-context.js";
 import { useContext } from "react";
 
 export function WhoItem() {

@@ -1,6 +1,6 @@
 import { ACCORDION_STATES } from "../accordion-states.js";
 import { AccordionItem } from "../accordion-item/accordion-item.jsx";
-import { FormDataContext } from "../../../../../../context/FormDataContext.js";
+import { FormDataContext } from "../../../../../../context/form-data-context.js";
 import { MAP_TILES } from "./map-tiles.js";
 import { MapTile } from "./map-tile/map-tile.jsx";
 import { TextInput } from "./text-input/text-input.jsx";

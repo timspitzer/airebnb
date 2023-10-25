@@ -1,5 +1,5 @@
 import { ACCORDION_STATES } from "../../accordion-states";
-import { FormDataContext } from "../../../../../../../context/FormDataContext";
+import { FormDataContext } from "../../../../../../../context/form-data-context.js";
 import { useContext } from "react";
 
 export function MapTile({ img, name, setAccordionValue }) {
