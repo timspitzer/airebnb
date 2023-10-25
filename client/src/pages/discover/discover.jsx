@@ -1,19 +1,20 @@
-import * as Tabs from "@radix-ui/react-tabs";
 import * as Dialog from "@radix-ui/react-dialog";
-import { useReducer } from "react";
-import { SearchModal } from "../../components/Discover/SearchModal/SearchModal.jsx";
-import { Header } from "../../components/Discover/Header/Header.jsx";
-import { TabsContent } from "../../components/Discover/Tabs/Content.jsx";
-import { Footer } from "../../components/common/Footer.jsx";
-import { BottomBar } from "../../components/common/BottomBar.jsx";
+import * as Tabs from "@radix-ui/react-tabs";
+
 import {
-  initialFormState,
   FormDataContext,
+  initialFormState,
 } from "../../context/FormDataContext.js";
 import {
   UPDATE_FORM_DATA,
   formDataReducer,
 } from "../../reducer/formDataReducer.js";
+
+import { Footer } from "../../components/common/footer/Footer.jsx";
+import { Header } from "../../components/common/header/Header.jsx";
+import { SearchModal } from "../../components/common/search/search-modal/search-modal.jsx";
+import { TabsContent } from "../../components/Discover/Tabs/Content.jsx";
+import { useReducer } from "react";
 
 export function Discover() {
   const [formData, dispatch] = useReducer(formDataReducer, initialFormState);
@@ -36,7 +37,6 @@ export function Discover() {
           </Tabs.Root>
         </Dialog.Root>
         <Footer></Footer>
-        <BottomBar></BottomBar>
       </FormDataContext.Provider>
     </div>
   );
