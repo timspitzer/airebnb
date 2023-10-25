@@ -1,6 +1,9 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { Discover, Rooms, Users } from "../pages/pages.js";
-import { ROOT, ROOMS, USERS, FALLBACK } from "./paths.js";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { FALLBACK, ROOMS, ROOT, USERS } from "./paths.js";
+
+import { Discover } from "../components/pages/discover/discover.jsx";
+import { Rooms } from "../components/pages/rooms/rooms.jsx";
+import { Users } from "../components/pages/users/users.jsx";
 
 export const Router = () => {
   return (

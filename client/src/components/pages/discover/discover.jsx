@@ -4,16 +4,16 @@ import * as Tabs from "@radix-ui/react-tabs";
 import {
   FormDataContext,
   initialFormState,
-} from "../../context/FormDataContext.js";
+} from "../../../context/FormDataContext.js";
 import {
   UPDATE_FORM_DATA,
   formDataReducer,
-} from "../../reducer/formDataReducer.js";
+} from "../../../reducer/formDataReducer.js";
 
-import { Footer } from "../../components/common/footer/Footer.jsx";
-import { Header } from "../../components/common/header/Header.jsx";
-import { SearchModal } from "../../components/common/search/search-modal/search-modal.jsx";
-import { TabsContent } from "../../components/Discover/Tabs/Content.jsx";
+import { Footer } from "../../common/footer/Footer.jsx";
+import { Header } from "../../common/header/Header.jsx";
+import { SearchModal } from "../../common/search/search-modal/search-modal.jsx";
+import { TabsContent } from "../../Discover/Tabs/Content.jsx";
 import { useReducer } from "react";
 
 export function Discover() {
