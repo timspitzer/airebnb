@@ -2,7 +2,7 @@ import { ACCORDION_STATES } from "../accordion-states.js";
 import { AccordionItem } from "../accordion-item/accordion-item.jsx";
 import { FormDataContext } from "../../../../../../context/FormDataContext.js";
 import { MapTile } from "./map-tile/map-tile.jsx";
-import { TextInput } from "./text-input/text-input.jsx";
+import { TextInput } from "../../modal-accordion/where-item/text-input/text-input.jsx";
 import { useContext } from "react";
 
 const DESTINATIONS = [
@@ -75,7 +75,7 @@ export function WhereItem({
           ></TextInput>
         ),
         additional: isSearchBarFocused ? null : (
-          <div className="m-t-[16px] flex gap-[16px] overflow-x-scroll pb-2">
+          <div className="m-t-[16px] flex gap-[16px] overflow-x-scroll">
             {DESTINATIONS_WITH_ID.map((destination) => {
               return (
                 <MapTile

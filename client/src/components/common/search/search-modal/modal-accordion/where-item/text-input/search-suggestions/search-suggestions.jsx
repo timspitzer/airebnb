@@ -1,6 +1,6 @@
-import { ACCORDION_STATES } from "../modal-accordion/accordion-states.js";
-import { FormDataContext } from "../../../../../context/FormDataContext.js";
-import { ListItem } from "./ListItem.jsx";
+import { ACCORDION_STATES } from "../../../accordion-states.js";
+import { FormDataContext } from "../../../../../../../../context/FormDataContext.js";
+import { ListItem } from "../list-item/list-item.jsx";
 import { useContext } from "react";
 
 export function SearchSuggestions({
@@ -10,19 +10,21 @@ export function SearchSuggestions({
   setAccordionValue,
 }) {
   const { updateFormData } = useContext(FormDataContext);
+
+  function handleItemClick(event, suggestion) {
+    event.preventDefault();
+    setSearchTerm(suggestion);
+    setIsSearchBarFocused(false);
+    updateFormData({ destination: suggestion });
+    setAccordionValue(ACCORDION_STATES[1]);
+  }
   return (
     <ul className="list-none p-0">
       {suggestions.map((suggestion, i) => {
         return (
           <ListItem
             key={i}
-            handleClick={(event) => {
-              event.preventDefault();
-              setSearchTerm(suggestion);
-              setIsSearchBarFocused(false);
-              updateFormData({ destination: suggestion });
-              setAccordionValue(ACCORDION_STATES[1]);
-            }}
+            handleClick={(event) => handleItemClick(event, suggestion)}
           >
             <div className="m-r-[16px] flex h-[48px] w-[48px] items-center justify-center rounded-[12px] bg-[#ebebeb]">
               <svg

@@ -1,7 +1,6 @@
 import * as Dialog from "@radix-ui/react-dialog";
 import * as Tabs from "@radix-ui/react-tabs";
 
-import { ModalAccordion } from "./modal-accordion/modal-accordion.jsx";
 import { ModalFooter } from "./modal-footer/modal-footer.jsx";
 import { ModalTabsContent } from "./modal-tabs/modal-tabs-content/modal-tabs-content.jsx";
 import { ModalTabsList } from "./modal-tabs/modal-tabs-list/modal-tabs-list.jsx";
@@ -24,15 +23,6 @@ export function SearchModal() {
             setIsSearchBarFocused={setIsSearchBarFocused}
             isSearchBarFocused={isSearchBarFocused}
           ></ModalTabsContent>
-          {/* <Tabs.Content value="stays" className="flex-grow">
-            <ModalAccordion
-              setIsSearchBarFocused={setIsSearchBarFocused}
-              isSearchBarFocused={isSearchBarFocused}
-            />
-          </Tabs.Content>
-          <Tabs.Content value="experiences">
-            <div>Expe</div>
-          </Tabs.Content> */}
         </Tabs.Root>
         <div className="absolute left-[20px] top-[22px] h-[32px] w-[32px] rounded-full border border-solid border-[#b0b0b0] bg-[#fefefe]">
           {isSearchBarFocused ? (

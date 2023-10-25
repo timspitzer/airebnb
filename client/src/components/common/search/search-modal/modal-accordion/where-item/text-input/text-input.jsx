@@ -1,28 +1,10 @@
 import { useContext, useEffect, useState } from "react";
 
-import { FormDataContext } from "../../../../../context/FormDataContext.js";
-import { RecentSearches } from "./RecentSearches.jsx";
-import { SearchSuggestions } from "./SearchSuggestions.jsx";
-import { places } from "./places.js";
-
-function generateSuggestions(query, places) {
-  if (query.length === 0) return [];
-  const lowerCaseQuery = query.toLowerCase();
-
-  let suggestions = places.filter((place) => {
-    const lowerCasePlace = place.toLowerCase();
-    return lowerCasePlace.startsWith(lowerCaseQuery);
-  });
-  if (suggestions.length < 1) {
-    suggestions = places.filter((place) => {
-      const lowerCasePlace = place.toLowerCase();
-      return lowerCasePlace.includes(lowerCaseQuery);
-    });
-  }
-  const slicedSuggestions = suggestions.slice(0, 5);
-
-  return slicedSuggestions;
-}
+import { FormDataContext } from "../../../../../../../context/FormDataContext.js";
+import { PLACES } from "./places.js";
+import { RecentSearches } from "./recent-searches/recent-searches.jsx";
+import { SearchSuggestions } from "./search-suggestions/search-suggestions.jsx";
+import { generateSuggestions } from "./helpers.js";
 
 export function TextInput({
   setIsSearchBarFocused,
@@ -36,18 +18,16 @@ export function TextInput({
   function handleInputChange(event) {
     const newSearchTerm = event.target.value;
     setSearchTerm(newSearchTerm);
-
-    // Generate suggestions based on newSearchTerm
-    const newSuggestions = generateSuggestions(newSearchTerm, places);
-
+    const newSuggestions = generateSuggestions(newSearchTerm, PLACES);
     setSuggestions(newSuggestions);
   }
 
+  // Make the text input have a value when setting the destination from somewhere else
   useEffect(() => {
     if (formData.destination) {
       setSearchTerm(formData.destination);
     }
-  }, []);
+  }, [formData.destination]);
 
   return (
     <div className="mx-6">

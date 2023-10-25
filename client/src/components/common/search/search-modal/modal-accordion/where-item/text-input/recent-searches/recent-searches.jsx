@@ -1,8 +1,7 @@
-import { FormDataContext } from "../../../../../context/FormDataContext.js";
-import { ListItem } from "./ListItem.jsx";
-import { formatDate } from "../../../../../utils/dates/formatDate.js";
+import { FormDataContext } from "../../../../../../../../context/FormDataContext.js";
+import { ListItem } from "../list-item/list-item.jsx";
+import { formatDate } from "../../../../../../../../utils/dates/formatDate.js";
 import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
 
 const names = ["Istanbul", "Munich", "Kairo", "Tokyo", "Berlin"];
 
@@ -17,21 +16,23 @@ const searches = names.map((name, i) => {
 
 export function RecentSearches() {
   const { updateFormData } = useContext(FormDataContext);
+
+  function handleItemClick(event, search) {
+    event.preventDefault();
+    updateFormData({
+      destination: search.destination,
+      dates: search.dates,
+      guests: search.guests,
+    });
+    // TODO: Go to next step
+  }
   return (
     <ul className="list-none p-0">
       {searches.map((search, i) => {
         return (
           <ListItem
             key={i}
-            handleClick={(event) => {
-              event.preventDefault();
-              updateFormData({
-                destination: search.destination,
-                dates: search.dates,
-                guests: search.guests,
-              });
-              // TODO: Go to next step
-            }}
+            handleClick={(event) => handleItemClick(event, search)}
           >
             <div className="m-r-[16px] flex h-[48px] w-[48px] items-center justify-center rounded-[12px] bg-[#ebebeb]">
               <svg
