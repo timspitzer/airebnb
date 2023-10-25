@@ -1,7 +1,7 @@
 import { AirebnbLogo } from "./airebnb-logo/airebnb-logo.jsx";
+import { CategoryTabsList } from "../../pages/discover/category-tabs/category-tabs-list/category-tabs-list.jsx";
 import { LanguagePicker } from "./language-picker/language-picker.jsx";
 import { Search } from "../search/search.jsx";
-import { TabsList } from "../../Discover/Tabs/TabsList.jsx";
 import { UserMenu } from "./user-menu/user-menu.jsx";
 
 export function Header() {
@@ -18,7 +18,7 @@ export function Header() {
           <UserMenu></UserMenu>
         </div>
       </div>
-      <TabsList></TabsList>
+      <CategoryTabsList></CategoryTabsList>
     </div>
   );
 }

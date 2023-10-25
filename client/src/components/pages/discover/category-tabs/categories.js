@@ -1,4 +1,4 @@
-export const categories = [
+export const CATEGORIES = [
   {
     name: "Rooms",
     iconUrl: "/src/assets/category-icons/rooms-icon.png",

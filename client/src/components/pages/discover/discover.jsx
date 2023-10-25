@@ -10,10 +10,10 @@ import {
   formDataReducer,
 } from "../../../reducer/formDataReducer.js";
 
+import { CategoryTabsContent } from "./category-tabs/category-tabs-content/category-tabs-content.jsx";
 import { Footer } from "../../common/footer/Footer.jsx";
 import { Header } from "../../common/header/Header.jsx";
 import { SearchModal } from "../../common/search/search-modal/search-modal.jsx";
-import { TabsContent } from "../../Discover/Tabs/Content.jsx";
 import { useReducer } from "react";
 
 export function Discover() {
@@ -32,7 +32,7 @@ export function Discover() {
           <Tabs.Root defaultValue="tab1">
             <Header></Header>
             <main>
-              <TabsContent></TabsContent>
+              <CategoryTabsContent></CategoryTabsContent>
             </main>
           </Tabs.Root>
         </Dialog.Root>

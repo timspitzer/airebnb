@@ -1,17 +1,12 @@
-import { useRef, useState, useEffect } from "react";
 import * as Tabs from "@radix-ui/react-tabs";
-import styles from "./TabsList.module.css";
-import { categories } from "./categories";
 
-const NUMBER_OF_ITEMS_TO_SCROLL = 5;
+import { useEffect, useRef, useState } from "react";
 
-function calculateScrollDistance(elementWidth, totalItems, direction) {
-  const scrollDistance =
-    NUMBER_OF_ITEMS_TO_SCROLL * Math.ceil(elementWidth / totalItems);
-  return direction === "left" ? -scrollDistance : scrollDistance;
-}
+import { CATEGORIES } from "../categories";
+import { calculateScrollDistance } from "./helpers";
+import styles from "./category-tabs-list.module.css";
 
-export function TabsList() {
+export function CategoryTabsList() {
   const tabListElementRef = useRef(null);
   const [isAtStart, setIsAtStart] = useState(true);
   const [isAtEnd, setIsAtEnd] = useState(false);
@@ -32,7 +27,7 @@ export function TabsList() {
       const elementWidth = tabListElementRef.current.offsetWidth;
       const scrollDistance = calculateScrollDistance(
         elementWidth,
-        categories.length,
+        CATEGORIES.length,
         direction
       );
 
@@ -85,7 +80,7 @@ export function TabsList() {
         ref={tabListElementRef}
         className="scrollbar-hide flex gap-6 overflow-x-scroll whitespace-nowrap px-6 md:mx-20 md:gap-10 md:px-0"
       >
-        {categories.map(({ name, iconUrl }) => (
+        {CATEGORIES.map(({ name, iconUrl }) => (
           <Tabs.Trigger
             className={`${styles.button} inline-flex flex-col items-center bg-transparent p-0 opacity-60 transition-opacity duration-200 ease-in-out hover:opacity-100 data-[state=active]:opacity-100`}
             key={name}
