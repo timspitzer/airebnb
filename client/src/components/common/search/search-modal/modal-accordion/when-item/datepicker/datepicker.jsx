@@ -6,7 +6,8 @@ export function DatePicker() {
 
   function onStartDateChange(event) {
     const date = new Date(
-      event.target.valueAsNumber + new Date().getTimezoneOffset() * 60 * 1000
+      // event.target.valueAsNumber + new Date().getTimezoneOffset() * 60 * 1000
+      event.target.valueAsNumber
     );
     updateFormData({
       startDate: date,
@@ -15,7 +16,8 @@ export function DatePicker() {
 
   function onEndDateChange(event) {
     const date = new Date(
-      event.target.valueAsNumber + new Date().getTimezoneOffset() * 60 * 1000
+      // event.target.valueAsNumber + new Date().getTimezoneOffset() * 60 * 1000
+      event.target.valueAsNumber
     );
     updateFormData({
       endDate: date,
