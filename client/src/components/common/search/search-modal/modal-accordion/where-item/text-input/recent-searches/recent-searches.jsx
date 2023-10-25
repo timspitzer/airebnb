@@ -1,6 +1,6 @@
 import { FormDataContext } from "../../../../../../../../context/form-data-context.js";
 import { ListItem } from "../list-item/list-item.jsx";
-import { formatDate } from "../../../../../../../../utils/dates/formatDate.js";
+import { formatDate } from "../../../../../../../../utils/dates/format-date.js";
 import { useContext } from "react";
 
 const names = ["Istanbul", "Munich", "Kairo", "Tokyo", "Berlin"];

@@ -1,7 +1,7 @@
 import * as Dialog from "@radix-ui/react-dialog";
 
 import { FormDataContext } from "../../../context/form-data-context.js";
-import { formatDate } from "../../../utils/dates/formatDate.js";
+import { formatDate } from "../../../utils/dates/format-date.js";
 import { useContext } from "react";
 
 function DesktopDivider() {

@@ -5,7 +5,7 @@ import { AccordionItem } from "../accordion-item/accordion-item.jsx";
 import { DatePicker } from "./datepicker/datepicker.jsx";
 import { FormDataContext } from "../../../../../../context/form-data-context.js";
 import { PlusMinusDays } from "./plus-minus-days/plus-minus-days.jsx";
-import { formatDate } from "../../../../../../utils/dates/formatDate.js";
+import { formatDate } from "../../../../../../utils/dates/format-date.js";
 
 const INITIAL_PILL = 0;
 

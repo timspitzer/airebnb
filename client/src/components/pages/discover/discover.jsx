@@ -8,7 +8,7 @@ import {
 import {
   UPDATE_FORM_DATA,
   formDataReducer,
-} from "../../../reducer/formDataReducer.js";
+} from "../../../reducer/form-data-reducer.js";
 
 import { CategoryTabsContent } from "./category-tabs/category-tabs-content/category-tabs-content.jsx";
 import { Footer } from "../../common/footer/Footer.jsx";
