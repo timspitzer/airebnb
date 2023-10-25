@@ -1,8 +1,8 @@
-import { ACCORDION_VALUES } from "../search-accordion/constants";
-import { FormDataContext } from "../../../../../context/FormDataContext";
+import { ACCORDION_STATES } from "../../accordion-states";
+import { FormDataContext } from "../../../../../../../context/FormDataContext";
 import { useContext } from "react";
 
-export function DestinationCard({ img, name, setAccordionValue }) {
+export function MapTile({ img, name, setAccordionValue }) {
   const { formData, updateFormData } = useContext(FormDataContext);
 
   return (
@@ -10,7 +10,7 @@ export function DestinationCard({ img, name, setAccordionValue }) {
       onClick={(e) => {
         e.preventDefault();
         updateFormData({ destination: name });
-        setAccordionValue(ACCORDION_VALUES[1]);
+        setAccordionValue(ACCORDION_STATES[1]);
       }}
       className="first:m-l-[24px] last:m-r-[24px] bg-transparent text-left"
     >

@@ -1,6 +1,6 @@
-import { ACCORDION_VALUES } from "./constants.js";
-import { FormDataContext } from "../../../../../context/FormDataContext.js";
-import { Item } from "./Item.jsx";
+import { ACCORDION_STATES } from "../accordion-states.js";
+import { AccordionItem } from "../accordion-item/accordion-item.jsx";
+import { FormDataContext } from "../../../../../../context/FormDataContext.js";
 import { useContext } from "react";
 
 export function WhoItem() {
@@ -19,8 +19,8 @@ export function WhoItem() {
   };
 
   return (
-    <Item
-      value={ACCORDION_VALUES[2]}
+    <AccordionItem
+      value={ACCORDION_STATES[2]}
       trigger={{
         title: "Who",
         description:
@@ -66,6 +66,6 @@ export function WhoItem() {
           </div>
         ),
       }}
-    ></Item>
+    ></AccordionItem>
   );
 }

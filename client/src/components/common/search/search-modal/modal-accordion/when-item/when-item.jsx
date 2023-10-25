@@ -1,11 +1,11 @@
 import { useContext, useState } from "react";
 
-import { ACCORDION_VALUES } from "./constants.js";
-import { DatePicker } from "../../../../Discover/datepicker/datepicker.jsx";
-import { FormDataContext } from "../../../../../context/FormDataContext.js";
-import { Item } from "./Item.jsx";
-import { PlusMinusDays } from "./plus-minus-days.jsx";
-import { formatDate } from "../../../../../utils/dates/formatDate.js";
+import { ACCORDION_STATES } from "../accordion-states.js";
+import { AccordionItem } from "../accordion-item/accordion-item.jsx";
+import { DatePicker } from "../../../../../Discover/datepicker/datepicker.jsx";
+import { FormDataContext } from "../../../../../../context/FormDataContext.js";
+import { PlusMinusDays } from "./plus-minus-days/plus-minus-days.jsx";
+import { formatDate } from "../../../../../../utils/dates/formatDate.js";
 
 const INITIAL_PILL = 0;
 
@@ -22,11 +22,11 @@ export function WhenItem({ setAccordionValue }) {
   const handleNextClick = (e) => {
     e.preventDefault();
     console.log("next");
-    setAccordionValue(ACCORDION_VALUES[2]);
+    setAccordionValue(ACCORDION_STATES[2]);
   };
   return (
-    <Item
-      value={ACCORDION_VALUES[1]}
+    <AccordionItem
+      value={ACCORDION_STATES[1]}
       trigger={{
         title: "When",
         description:
@@ -68,6 +68,6 @@ export function WhenItem({ setAccordionValue }) {
           </>
         ),
       }}
-    ></Item>
+    ></AccordionItem>
   );
 }

@@ -1,8 +1,8 @@
-import { ACCORDION_VALUES } from "./constants.js";
-import { DestinationCard } from "../DestinationCard/DestinationCard.jsx";
-import { FormDataContext } from "../../../../../context/FormDataContext.js";
-import { Item } from "./Item.jsx";
-import { TextInput } from "../text-input/text-input.jsx";
+import { ACCORDION_STATES } from "../accordion-states.js";
+import { AccordionItem } from "../accordion-item/accordion-item.jsx";
+import { FormDataContext } from "../../../../../../context/FormDataContext.js";
+import { MapTile } from "./map-tile/map-tile.jsx";
+import { TextInput } from "../../text-input/text-input.jsx";
 import { useContext } from "react";
 
 const DESTINATIONS = [
@@ -56,9 +56,9 @@ export function WhereItem({
   const { formData } = useContext(FormDataContext);
   const { destination } = formData;
   return (
-    <Item
+    <AccordionItem
       className={isSearchBarFocused ? "fixed left-0 h-full w-full" : ""}
-      value={ACCORDION_VALUES[0]}
+      value={ACCORDION_STATES[0]}
       trigger={{
         title: "Where",
         description: destination.length === 0 ? "I'm flexible" : destination,
@@ -78,17 +78,17 @@ export function WhereItem({
           <div className="m-t-[16px] flex gap-[16px] overflow-x-scroll">
             {DESTINATIONS_WITH_ID.map((destination) => {
               return (
-                <DestinationCard
+                <MapTile
                   setAccordionValue={setAccordionValue}
                   key={destination.id}
                   name={destination.name}
                   img={destination.img}
-                ></DestinationCard>
+                ></MapTile>
               );
             })}
           </div>
         ),
       }}
-    ></Item>
+    ></AccordionItem>
   );
 }

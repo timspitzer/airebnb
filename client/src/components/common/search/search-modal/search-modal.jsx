@@ -1,9 +1,10 @@
 import * as Dialog from "@radix-ui/react-dialog";
 import * as Tabs from "@radix-ui/react-tabs";
 
-import { SearchAccordion } from "./search-accordion/search-accordion.jsx";
-import { SearchFooter } from "./search-footer/search-footer.jsx";
-import { TabsList } from "./Tabs/TabsList.jsx";
+import { ModalAccordion } from "./modal-accordion/modal-accordion.jsx";
+import { ModalFooter } from "./modal-footer/modal-footer.jsx";
+import { ModalTabsContent } from "./modal-tabs/modal-tabs-content/modal-tabs-content.jsx";
+import { ModalTabsList } from "./modal-tabs/modal-tabs-list/modal-tabs-list.jsx";
 import { useState } from "react";
 
 export function SearchModal() {
@@ -15,19 +16,23 @@ export function SearchModal() {
       <Dialog.Overlay />
       <Dialog.Content className="fixed left-0 top-0 h-full w-full overflow-y-scroll bg-[#f7f7f7] focus:outline-none">
         <Tabs.Root value={activeTab} className="flex h-full flex-col md:px-96">
-          <TabsList
+          <ModalTabsList
             activeTab={activeTab}
             setActiveTab={setActiveTab}
-          ></TabsList>
-          <Tabs.Content value="stays" className="flex-grow">
-            <SearchAccordion
+          ></ModalTabsList>
+          <ModalTabsContent
+            setIsSearchBarFocused={setIsSearchBarFocused}
+            isSearchBarFocused={isSearchBarFocused}
+          ></ModalTabsContent>
+          {/* <Tabs.Content value="stays" className="flex-grow">
+            <ModalAccordion
               setIsSearchBarFocused={setIsSearchBarFocused}
               isSearchBarFocused={isSearchBarFocused}
             />
           </Tabs.Content>
           <Tabs.Content value="experiences">
             <div>Expe</div>
-          </Tabs.Content>
+          </Tabs.Content> */}
         </Tabs.Root>
         <div className="absolute left-[20px] top-[22px] h-[32px] w-[32px] rounded-full border border-solid border-[#b0b0b0] bg-[#fefefe]">
           {isSearchBarFocused ? (
@@ -44,7 +49,7 @@ export function SearchModal() {
           )}
         </div>
         {/* SearchFooter */}
-        {isSearchBarFocused ? null : <SearchFooter></SearchFooter>}
+        {isSearchBarFocused ? null : <ModalFooter></ModalFooter>}
       </Dialog.Content>
     </Dialog.Portal>
   );

@@ -1,4 +1,4 @@
-import { ACCORDION_VALUES } from "../search-accordion/constants.js";
+import { ACCORDION_STATES } from "../modal-accordion/accordion-states.js";
 import { FormDataContext } from "../../../../../context/FormDataContext.js";
 import { ListItem } from "./ListItem.jsx";
 import { useContext } from "react";
@@ -21,7 +21,7 @@ export function SearchSuggestions({
               setSearchTerm(suggestion);
               setIsSearchBarFocused(false);
               updateFormData({ destination: suggestion });
-              setAccordionValue(ACCORDION_VALUES[1]);
+              setAccordionValue(ACCORDION_STATES[1]);
             }}
           >
             <div className="m-r-[16px] flex h-[48px] w-[48px] items-center justify-center rounded-[12px] bg-[#ebebeb]">

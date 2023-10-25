@@ -1,6 +1,6 @@
 import * as RadixAccordion from "@radix-ui/react-accordion";
 
-export function Item({ value, trigger, itemContent, className }) {
+export function AccordionItem({ value, trigger, itemContent, className }) {
   return (
     <RadixAccordion.Item className={className} value={value}>
       <RadixAccordion.Trigger className="m-b-[12px] flex h-full w-full justify-between rounded-[16px] bg-[#ffffff] p-[24px] shadow-md data-[state=open]:hidden">

@@ -1,6 +1,6 @@
 import * as Tabs from "@radix-ui/react-tabs";
 
-export function TabsList({ activeTab, setActiveTab }) {
+export function ModalTabsList({ activeTab, setActiveTab }) {
   return (
     <Tabs.List className="p-t-[18px] p-b-[9px] relative">
       <div className="flex justify-center">
