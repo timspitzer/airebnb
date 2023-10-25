@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 
 import { ACCORDION_STATES } from "../accordion-states.js";
 import { AccordionItem } from "../accordion-item/accordion-item.jsx";
-import { DatePicker } from "./datepicker/datepicker.jsx";
+import { DatePicker } from "../../modal-accordion/when-item/datepicker/datepicker.jsx";
 import { FormDataContext } from "../../../../../../context/FormDataContext.js";
 import { PlusMinusDays } from "./plus-minus-days/plus-minus-days.jsx";
 import { formatDate } from "../../../../../../utils/dates/formatDate.js";
