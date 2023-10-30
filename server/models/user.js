@@ -24,11 +24,11 @@ const UserModel = {
     }
   },
   createUser: async (userData) => {
-    const { username, email, password, phoneNumber, address } = userData;
+    const { name, email, password, phoneNumber, address } = userData;
     try {
       const [result] = await db.query(
-        "INSERT INTO Users (username, email, password, phone_number, address) VALUES (?, ?, ?, ?, ?)",
-        [username, email, password, phoneNumber, address]
+        "INSERT INTO Users (name, email, password, phone_number, address) VALUES (?, ?, ?, ?, ?)",
+        [name, email, password, phoneNumber, address]
       );
       return { id: result.insertId };
     } catch (error) {
@@ -36,14 +36,14 @@ const UserModel = {
     }
   },
   updateUser: async (userId, userData) => {
-    const { username, email, password, phoneNumber, address } = userData;
+    const { name, email, password, phoneNumber, address } = userData;
     try {
       let query = "UPDATE Users SET ";
       const values = [];
 
-      if (username) {
-        query += "username = ?, ";
-        values.push(username);
+      if (name) {
+        query += "name = ?, ";
+        values.push(name);
       }
       if (email) {
         query += "email = ?, ";
@@ -65,7 +65,7 @@ const UserModel = {
       // Remove the trailing comma and space
       query = query.slice(0, -2);
 
-      query += " WHERE id = ?";
+      query += " WHERE user_id = ?";
       values.push(userId);
 
       const [result] = await db.query(query, values);
@@ -80,16 +80,15 @@ const UserModel = {
     }
   },
   deleteUser: async (userId) => {
-    const [result] = await db.query("DELETE FROM Users WHERE user_id = ?", [
-      userId,
-    ]);
-
-    if (result.affectedRows > 0) {
-      return true;
-    } else {
-      return false; // User not found
-    }
     try {
+      const [result] = await db.query("DELETE FROM Users WHERE user_id = ?", [
+        userId,
+      ]);
+      if (result.affectedRows > 0) {
+        return true;
+      } else {
+        return false; // User not found
+      }
     } catch (error) {
       throw error;
     }

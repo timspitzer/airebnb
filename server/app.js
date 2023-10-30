@@ -7,10 +7,10 @@ const port = process.env.PORT || 3000;
 app.use(express.json());
 
 // Routes
-// const usersRoute = require("./routes/users.js");
+const usersRoute = require("./routes/users.js");
 const propertiesRoute = require("./routes/properties.js");
 
-// app.use("/users", usersRoute);
+app.use("/users", usersRoute);
 app.use("/properties", propertiesRoute);
 
 app.listen(port, () => {

@@ -45,7 +45,7 @@ const UsersController = {
         res.status(404).json({ error: "User not found" });
       }
     } catch (error) {
-      res.status(400).json({ error: "Invalid input data" });
+      res.status(400).json({ error: "Invalid input data", error: error });
     }
   },
 
@@ -59,7 +59,7 @@ const UsersController = {
         res.status(404).json({ error: "User not found" });
       }
     } catch (error) {
-      res.status(500).json({ error: "Internal Server Error" });
+      res.status(500).json({ error: "Internal Server Error", error: error });
     }
   },
 };

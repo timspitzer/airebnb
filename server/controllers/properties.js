@@ -48,15 +48,16 @@ const PropertiesController = {
         res.status(404).json({ error: "Property not found" });
       }
     } catch (error) {
-      res.status(400).json({ error: "Invalid input data" });
+      res.status(400).json({ error: "Invalid input data", error: error });
     }
   },
 
   deleteProperty: async (req, res) => {
     const propertyId = req.params.id;
+    console.log("propertyId", propertyId);
     try {
-      const deletedProperty = await PropertyModel.deleteProperty(propertyId);
-      if (deletedProperty) {
+      const isPropertyDeleted = await PropertyModel.deleteProperty(propertyId);
+      if (isPropertyDeleted) {
         res.json({ message: "Property deleted successfully" });
       } else {
         res.status(404).json({ error: "Property not found" });

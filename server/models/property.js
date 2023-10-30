@@ -116,7 +116,7 @@ const PropertyModel = {
       // Remove the trailing comma and space
       query = query.slice(0, -2);
 
-      query += " WHERE id = ?";
+      query += " WHERE property_id = ?";
       values.push(propertyId);
 
       const [result] = await db.query(query, values);
@@ -126,14 +126,17 @@ const PropertyModel = {
       } else {
         return null; // Property not found
       }
-    } catch (error) {}
+    } catch (error) {
+      throw error;
+    }
   },
 
   deleteProperty: async (propertyId) => {
     try {
-      const result = db.query("DELETE FROM Propertys WHERE property_id = ?", [
-        propertyId,
-      ]);
+      const [result] = await db.query(
+        "DELETE FROM Properties WHERE property_id = ?",
+        [propertyId]
+      );
       if (result.affectedRows > 0) {
         return true;
       } else {
