@@ -1,5 +1,5 @@
-import { FormDataContext } from "../../../../../../../../context/form-data-context.js";
 import { ListItem } from "../list-item/list-item.jsx";
+import { SearchDataContext } from "../../../../../../../../context/search-data-context.js";
 import { formatDate } from "../../../../../../../../utils/dates/format-date.js";
 import { useContext } from "react";
 
@@ -15,11 +15,11 @@ const searches = names.map((name, i) => {
 });
 
 export function RecentSearches() {
-  const { updateFormData } = useContext(FormDataContext);
+  const { updateSearchData } = useContext(SearchDataContext);
 
   function handleItemClick(event, search) {
     event.preventDefault();
-    updateFormData({
+    updateSearchData({
       destination: search.destination,
       dates: search.dates,
       guests: search.guests,

@@ -1,19 +1,19 @@
-import { FormDataContext } from "../../../../../../../context/form-data-context.js";
+import { SearchDataContext } from "../../../../../../../context/search-data-context.js";
 import { useContext } from "react";
 
 export function DatePicker() {
-  const { formData, updateFormData } = useContext(FormDataContext);
+  const { searchData, updateSearchData } = useContext(SearchDataContext);
 
   function onStartDateChange(event) {
     const date = new Date(event.target.valueAsNumber);
-    updateFormData({
+    updateSearchData({
       startDate: date,
     });
   }
 
   function onEndDateChange(event) {
     const date = new Date(event.target.valueAsNumber);
-    updateFormData({
+    updateSearchData({
       endDate: date,
     });
   }
@@ -23,8 +23,8 @@ export function DatePicker() {
       <input
         id="start"
         value={
-          formData.startDate
-            ? new Date(formData.startDate).toISOString().split("T")[0]
+          searchData.startDate
+            ? new Date(searchData.startDate).toISOString().split("T")[0]
             : ""
         }
         onChange={onStartDateChange}
@@ -33,8 +33,8 @@ export function DatePicker() {
       ></input>
       <input
         value={
-          formData.endDate
-            ? new Date(formData.endDate).toISOString().split("T")[0]
+          searchData.endDate
+            ? new Date(searchData.endDate).toISOString().split("T")[0]
             : ""
         }
         onChange={onEndDateChange}

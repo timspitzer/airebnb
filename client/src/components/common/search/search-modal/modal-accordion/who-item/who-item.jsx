@@ -1,21 +1,21 @@
 import { ACCORDION_STATES } from "../accordion-states.js";
 import { AccordionItem } from "../accordion-item/accordion-item.jsx";
-import { FormDataContext } from "../../../../../../context/form-data-context.js";
+import { SearchDataContext } from "../../../../../../context/search-data-context.js";
 import { useContext } from "react";
 
 export function WhoItem() {
-  const { formData, updateFormData } = useContext(FormDataContext);
-  const { guests } = formData;
+  const { searchData, updateSearchData } = useContext(SearchDataContext);
+  const { guests } = searchData;
 
   const handleMinusClick = (e) => {
     e.preventDefault();
     if (guests === 0) return;
-    updateFormData({ guests: guests - 1 });
+    updateSearchData({ guests: guests - 1 });
   };
   const handlePlusClick = (e) => {
     e.preventDefault();
     if (guests === 16) return;
-    updateFormData({ guests: guests + 1 });
+    updateSearchData({ guests: guests + 1 });
   };
 
   return (

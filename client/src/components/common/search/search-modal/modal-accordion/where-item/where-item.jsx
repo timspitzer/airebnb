@@ -1,8 +1,8 @@
 import { ACCORDION_STATES } from "../accordion-states.js";
 import { AccordionItem } from "../accordion-item/accordion-item.jsx";
-import { FormDataContext } from "../../../../../../context/form-data-context.js";
 import { MAP_TILES } from "./map-tiles.js";
 import { MapTile } from "./map-tile/map-tile.jsx";
+import { SearchDataContext } from "../../../../../../context/search-data-context.js";
 import { TextInput } from "./text-input/text-input.jsx";
 import { useContext } from "react";
 
@@ -15,8 +15,8 @@ export function WhereItem({
   isSearchBarFocused,
   setIsSearchBarFocused,
 }) {
-  const { formData } = useContext(FormDataContext);
-  const { destination } = formData;
+  const { searchData } = useContext(SearchDataContext);
+  const { destination } = searchData;
   return (
     <AccordionItem
       className={isSearchBarFocused ? "fixed left-0 h-full w-full" : ""}

@@ -3,19 +3,19 @@ import { useContext, useState } from "react";
 import { ACCORDION_STATES } from "../accordion-states.js";
 import { AccordionItem } from "../accordion-item/accordion-item.jsx";
 import { DatePicker } from "./datepicker/datepicker.jsx";
-import { FormDataContext } from "../../../../../../context/form-data-context.js";
 import { PlusMinusDays } from "./plus-minus-days/plus-minus-days.jsx";
+import { SearchDataContext } from "../../../../../../context/search-data-context.js";
 import { formatDate } from "../../../../../../utils/dates/format-date.js";
 
 const INITIAL_PILL = 0;
 
 export function WhenItem({ setAccordionValue }) {
-  const { formData, updateFormData } = useContext(FormDataContext);
+  const { searchData, updateSearchData } = useContext(SearchDataContext);
   const [activePill, setActivePill] = useState(INITIAL_PILL);
 
   const handleResetClick = (e) => {
     e.preventDefault();
-    updateFormData({ startDate: null, endDate: null });
+    updateSearchData({ startDate: null, endDate: null });
     setActivePill(INITIAL_PILL);
   };
 
@@ -30,9 +30,9 @@ export function WhenItem({ setAccordionValue }) {
       trigger={{
         title: "When",
         description:
-          formData.startDate && formData.endDate
-            ? `${formatDate(formData.startDate)} - ${formatDate(
-                formData.endDate
+          searchData.startDate && searchData.endDate
+            ? `${formatDate(searchData.startDate)} - ${formatDate(
+                searchData.endDate
               )}`
             : "Add dates",
       }}

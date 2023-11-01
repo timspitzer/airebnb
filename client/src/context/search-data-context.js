@@ -1,6 +1,6 @@
 import { createContext } from "react";
 
-export const FormDataContext = createContext();
+export const SearchDataContext = createContext();
 
 export const initialFormState = {
   destination: "",

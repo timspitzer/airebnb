@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 
-import { FormDataContext } from "../../../../../../../context/form-data-context.js";
 import { PLACES } from "./places.js";
 import { RecentSearches } from "./recent-searches/recent-searches.jsx";
+import { SearchDataContext } from "../../../../../../../context/search-data-context.js";
 import { SearchSuggestions } from "./search-suggestions/search-suggestions.jsx";
 import { generateSuggestions } from "./helpers.js";
 
@@ -11,7 +11,7 @@ export function TextInput({
   isSearchBarFocused,
   setAccordionValue,
 }) {
-  const { formData } = useContext(FormDataContext);
+  const { searchData } = useContext(SearchDataContext);
   const [searchTerm, setSearchTerm] = useState("");
   const [suggestions, setSuggestions] = useState([]);
 
@@ -24,10 +24,10 @@ export function TextInput({
 
   // Make the text input have a value when setting the destination from somewhere else
   useEffect(() => {
-    if (formData.destination) {
-      setSearchTerm(formData.destination);
+    if (searchData.destination) {
+      setSearchTerm(searchData.destination);
     }
-  }, [formData.destination]);
+  }, [searchData.destination]);
 
   return (
     <div className="mx-6">

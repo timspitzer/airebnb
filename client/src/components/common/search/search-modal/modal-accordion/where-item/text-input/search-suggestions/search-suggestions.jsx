@@ -1,6 +1,6 @@
 import { ACCORDION_STATES } from "../../../accordion-states.js";
-import { FormDataContext } from "../../../../../../../../context/form-data-context.js";
 import { ListItem } from "../list-item/list-item.jsx";
+import { SearchDataContext } from "../../../../../../../../context/search-data-context.js";
 import { useContext } from "react";
 
 export function SearchSuggestions({
@@ -9,13 +9,13 @@ export function SearchSuggestions({
   setIsSearchBarFocused,
   setAccordionValue,
 }) {
-  const { updateFormData } = useContext(FormDataContext);
+  const { updateSearchData } = useContext(SearchDataContext);
 
   function handleItemClick(event, suggestion) {
     event.preventDefault();
     setSearchTerm(suggestion);
     setIsSearchBarFocused(false);
-    updateFormData({ destination: suggestion });
+    updateSearchData({ destination: suggestion });
     setAccordionValue(ACCORDION_STATES[1]);
   }
   return (

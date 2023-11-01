@@ -2,13 +2,13 @@ import * as Dialog from "@radix-ui/react-dialog";
 import * as Tabs from "@radix-ui/react-tabs";
 
 import {
-  FormDataContext,
+  SearchDataContext,
   initialFormState,
-} from "../../../context/form-data-context.js";
+} from "../../../context/search-data-context.js";
 import {
   UPDATE_FORM_DATA,
-  formDataReducer,
-} from "../../../reducer/form-data-reducer.js";
+  searchDataReducer,
+} from "../../../reducer/search-data-reducer.js";
 
 import { CategoryTabsContent } from "./category-tabs/category-tabs-content/category-tabs-content.jsx";
 import { Footer } from "../../common/footer/Footer.jsx";
@@ -17,16 +17,19 @@ import { SearchModal } from "../../common/search/search-modal/search-modal.jsx";
 import { useReducer } from "react";
 
 export function Discover() {
-  const [formData, dispatch] = useReducer(formDataReducer, initialFormState);
+  const [searchData, dispatch] = useReducer(
+    searchDataReducer,
+    initialFormState
+  );
 
   // TODO: This wrapper adds ease of use but also confusion, consider not doing this next time
-  const updateFormData = (newData) => {
+  const updateSearchData = (newData) => {
     dispatch({ type: UPDATE_FORM_DATA, payload: newData });
   };
 
   return (
     <div className="discover-page">
-      <FormDataContext.Provider value={{ formData, updateFormData }}>
+      <SearchDataContext.Provider value={{ searchData, updateSearchData }}>
         <Dialog.Root>
           <SearchModal></SearchModal>
           <Tabs.Root defaultValue="tab1">
@@ -37,7 +40,7 @@ export function Discover() {
           </Tabs.Root>
         </Dialog.Root>
         <Footer></Footer>
-      </FormDataContext.Provider>
+      </SearchDataContext.Provider>
     </div>
   );
 }

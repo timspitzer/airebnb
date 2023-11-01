@@ -1,6 +1,6 @@
 import * as Dialog from "@radix-ui/react-dialog";
 
-import { FormDataContext } from "../../../context/form-data-context.js";
+import { SearchDataContext } from "../../../context/search-data-context.js";
 import { formatDate } from "../../../utils/dates/format-date.js";
 import { useContext } from "react";
 
@@ -11,7 +11,7 @@ function DesktopDivider() {
 }
 
 export function Search() {
-  const { formData } = useContext(FormDataContext);
+  const { searchData } = useContext(SearchDataContext);
 
   return (
     <div className="md:min-h-12 min-h-14 min-w-xs flex items-stretch justify-between rounded-[1000px] border-[0.5px] border-solid border-neutral-100 shadow-md md:border-neutral-300">
@@ -24,9 +24,9 @@ export function Search() {
             {/* DESTINATION */}
             <div className="text-left text-sm font-semibold md:inline">
               <span>
-                {formData.destination.length === 0
+                {searchData.destination.length === 0
                   ? "Anywhere"
-                  : formData.destination}
+                  : searchData.destination}
               </span>
             </div>
             <DesktopDivider></DesktopDivider>
@@ -36,15 +36,17 @@ export function Search() {
             <div className="text-left md:hidden">
               <sub className="text-xs text-neutral-500">
                 <span>
-                  {formData.startDate && formData.endDate
-                    ? `${formatDate(formData.startDate)} – ${formatDate(
-                        formData.endDate
+                  {searchData.startDate && searchData.endDate
+                    ? `${formatDate(searchData.startDate)} – ${formatDate(
+                        searchData.endDate
                       )}`
                     : "Any week"}
                   {" · "}
-                  {formData.guests === 0 ? "Add guests" : null}
-                  {formData.guests === 1 ? `${formData.guests} guest` : null}
-                  {formData.guests > 1 ? `${formData.guests} guests` : null}
+                  {searchData.guests === 0 ? "Add guests" : null}
+                  {searchData.guests === 1
+                    ? `${searchData.guests} guest`
+                    : null}
+                  {searchData.guests > 1 ? `${searchData.guests} guests` : null}
                 </span>
               </sub>
             </div>
@@ -52,17 +54,17 @@ export function Search() {
 
             {/* DESKTOP DATES AND GUESTS */}
             <span className="hidden font-semibold md:inline">
-              {formData.startDate && formData.endDate
-                ? `${formatDate(formData.startDate)} – ${formatDate(
-                    formData.endDate
+              {searchData.startDate && searchData.endDate
+                ? `${formatDate(searchData.startDate)} – ${formatDate(
+                    searchData.endDate
                   )}`
                 : "Any week"}
             </span>
             <DesktopDivider></DesktopDivider>
             <span className="hidden text-neutral-500 md:inline">
-              {formData.guests === 0 ? "Add guests" : null}
-              {formData.guests === 1 ? `${formData.guests} guest` : null}
-              {formData.guests > 1 ? `${formData.guests} guests` : null}
+              {searchData.guests === 0 ? "Add guests" : null}
+              {searchData.guests === 1 ? `${searchData.guests} guest` : null}
+              {searchData.guests > 1 ? `${searchData.guests} guests` : null}
             </span>
             {/* DESKTOP DATES AND GUESTS */}
           </div>

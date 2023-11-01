@@ -1,22 +1,22 @@
 import { ACCORDION_STATES } from "../../accordion-states";
-import { FormDataContext } from "../../../../../../../context/form-data-context.js";
+import { SearchDataContext } from "../../../../../../../context/search-data-context.js";
 import { useContext } from "react";
 
 export function MapTile({ img, name, setAccordionValue }) {
-  const { formData, updateFormData } = useContext(FormDataContext);
+  const { searchData, updateSearchData } = useContext(SearchDataContext);
 
   return (
     <button
       onClick={(e) => {
         e.preventDefault();
-        updateFormData({ destination: name });
+        updateSearchData({ destination: name });
         setAccordionValue(ACCORDION_STATES[1]);
       }}
       className="first:m-l-[24px] last:m-r-[24px] bg-transparent text-left"
     >
       <img
         className={`h-[122px] w-[122px] rounded-[12px] border-solid transition-transform ease-in-out active:scale-95 ${
-          formData.destination === name
+          searchData.destination === name
             ? "border-2 border-[#222222]"
             : "border-1 border-[#dddddd] hover:border-[#000000]"
         }`}
