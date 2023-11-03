@@ -1,6 +1,8 @@
 import * as Tabs from "@radix-ui/react-tabs";
 
 import { CATEGORIES } from "../categories";
+import { PROPERTIES } from "./properties.js";
+import { Property } from "./property/property.jsx";
 
 export function CategoryTabsContent() {
   return (
@@ -8,7 +10,12 @@ export function CategoryTabsContent() {
       {CATEGORIES.map(({ name }) => {
         return (
           <Tabs.Content key={name} value={name}>
-            <div className="h-900px">{name}</div>
+            {PROPERTIES.map((propertyData) => (
+              <Property
+                key={propertyData.propertyId}
+                {...propertyData}
+              ></Property>
+            ))}
           </Tabs.Content>
         );
       })}

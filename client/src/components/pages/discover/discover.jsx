@@ -1,5 +1,4 @@
 import * as Dialog from "@radix-ui/react-dialog";
-import * as Tabs from "@radix-ui/react-tabs";
 
 import {
   SearchDataContext,
@@ -10,9 +9,8 @@ import {
   searchDataReducer,
 } from "../../../reducer/search-data-reducer.js";
 
-import { CategoryTabsContent } from "./category-tabs/category-tabs-content/category-tabs-content.jsx";
+import { CategoryTabs } from "./category-tabs/category-tabs.jsx";
 import { Footer } from "../../common/footer/Footer.jsx";
-import { Header } from "../../common/header/Header.jsx";
 import { SearchModal } from "../../common/search/search-modal/search-modal.jsx";
 import { useReducer } from "react";
 
@@ -32,12 +30,7 @@ export function Discover() {
       <SearchDataContext.Provider value={{ searchData, updateSearchData }}>
         <Dialog.Root>
           <SearchModal></SearchModal>
-          <Tabs.Root defaultValue="tab1">
-            <Header></Header>
-            <main>
-              <CategoryTabsContent></CategoryTabsContent>
-            </main>
-          </Tabs.Root>
+          <CategoryTabs></CategoryTabs>
         </Dialog.Root>
         <Footer></Footer>
       </SearchDataContext.Provider>

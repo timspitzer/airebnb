@@ -1,5 +1,6 @@
 import * as Dialog from "@radix-ui/react-dialog";
 
+import { FormattedDate } from "../formatted-date/formatted-date.jsx";
 import { SearchDataContext } from "../../../context/search-data-context.js";
 import { formatDate } from "../../../utils/dates/format-date.js";
 import { useContext } from "react";
@@ -36,11 +37,7 @@ export function Search() {
             <div className="text-left md:hidden">
               <sub className="text-xs text-neutral-500">
                 <span>
-                  {searchData.startDate && searchData.endDate
-                    ? `${formatDate(searchData.startDate)} – ${formatDate(
-                        searchData.endDate
-                      )}`
-                    : "Any week"}
+                  <FormattedDate></FormattedDate>
                   {" · "}
                   {searchData.guests === 0 ? "Add guests" : null}
                   {searchData.guests === 1
