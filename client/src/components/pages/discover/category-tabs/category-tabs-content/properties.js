@@ -11,7 +11,6 @@ export const PROPERTIES = [
     pricePerNight: 1000.0,
     location: "1 Apple Park Way, Cupertino, CA 95014, United States",
     propertyImages: [
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/c5/91/46/apple-park-visitor-center.jpg?w=1200&h=-1&s=1",
       "https://rtlimages.apple.com/cmc/dieter/store/16_9/R824.png?resize=2880:1612&output-format=jpg&output-quality=85&interpolation=progressive-bicubic",
       "https://assets.arquitecturaviva.com/assets/uploads/obras/39368/av_15796.webp?h=0d3b9188",
       "https://www.cnet.com/a/img/resize/eb23c30d6ac26524a688003a73ceda265de316e9/hub/2017/09/12/0a8401b6-fc6f-44e8-99fc-31ed49984fdf/apple-091217-steve-jobs-theater-3858.jpg?auto=webp&width=1200",
@@ -30,7 +29,6 @@ export const PROPERTIES = [
     pricePerNight: 1000.0,
     location: "1 Apple Park Way, Cupertino, CA 95014, United States",
     propertyImages: [
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/c5/91/46/apple-park-visitor-center.jpg?w=1200&h=-1&s=1",
       "https://rtlimages.apple.com/cmc/dieter/store/16_9/R824.png?resize=2880:1612&output-format=jpg&output-quality=85&interpolation=progressive-bicubic",
       "https://assets.arquitecturaviva.com/assets/uploads/obras/39368/av_15796.webp?h=0d3b9188",
       "https://www.cnet.com/a/img/resize/eb23c30d6ac26524a688003a73ceda265de316e9/hub/2017/09/12/0a8401b6-fc6f-44e8-99fc-31ed49984fdf/apple-091217-steve-jobs-theater-3858.jpg?auto=webp&width=1200",
@@ -49,7 +47,6 @@ export const PROPERTIES = [
     pricePerNight: 1000.0,
     location: "1 Apple Park Way, Cupertino, CA 95014, United States",
     propertyImages: [
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/c5/91/46/apple-park-visitor-center.jpg?w=1200&h=-1&s=1",
       "https://rtlimages.apple.com/cmc/dieter/store/16_9/R824.png?resize=2880:1612&output-format=jpg&output-quality=85&interpolation=progressive-bicubic",
       "https://assets.arquitecturaviva.com/assets/uploads/obras/39368/av_15796.webp?h=0d3b9188",
       "https://www.cnet.com/a/img/resize/eb23c30d6ac26524a688003a73ceda265de316e9/hub/2017/09/12/0a8401b6-fc6f-44e8-99fc-31ed49984fdf/apple-091217-steve-jobs-theater-3858.jpg?auto=webp&width=1200",
@@ -68,7 +65,6 @@ export const PROPERTIES = [
     pricePerNight: 1000.0,
     location: "1 Apple Park Way, Cupertino, CA 95014, United States",
     propertyImages: [
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/c5/91/46/apple-park-visitor-center.jpg?w=1200&h=-1&s=1",
       "https://rtlimages.apple.com/cmc/dieter/store/16_9/R824.png?resize=2880:1612&output-format=jpg&output-quality=85&interpolation=progressive-bicubic",
       "https://assets.arquitecturaviva.com/assets/uploads/obras/39368/av_15796.webp?h=0d3b9188",
       "https://www.cnet.com/a/img/resize/eb23c30d6ac26524a688003a73ceda265de316e9/hub/2017/09/12/0a8401b6-fc6f-44e8-99fc-31ed49984fdf/apple-091217-steve-jobs-theater-3858.jpg?auto=webp&width=1200",
@@ -87,7 +83,6 @@ export const PROPERTIES = [
     pricePerNight: 1000.0,
     location: "1 Apple Park Way, Cupertino, CA 95014, United States",
     propertyImages: [
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/c5/91/46/apple-park-visitor-center.jpg?w=1200&h=-1&s=1",
       "https://rtlimages.apple.com/cmc/dieter/store/16_9/R824.png?resize=2880:1612&output-format=jpg&output-quality=85&interpolation=progressive-bicubic",
       "https://assets.arquitecturaviva.com/assets/uploads/obras/39368/av_15796.webp?h=0d3b9188",
       "https://www.cnet.com/a/img/resize/eb23c30d6ac26524a688003a73ceda265de316e9/hub/2017/09/12/0a8401b6-fc6f-44e8-99fc-31ed49984fdf/apple-091217-steve-jobs-theater-3858.jpg?auto=webp&width=1200",
@@ -106,7 +101,6 @@ export const PROPERTIES = [
     pricePerNight: 1000.0,
     location: "1 Apple Park Way, Cupertino, CA 95014, United States",
     propertyImages: [
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/c5/91/46/apple-park-visitor-center.jpg?w=1200&h=-1&s=1",
       "https://rtlimages.apple.com/cmc/dieter/store/16_9/R824.png?resize=2880:1612&output-format=jpg&output-quality=85&interpolation=progressive-bicubic",
       "https://assets.arquitecturaviva.com/assets/uploads/obras/39368/av_15796.webp?h=0d3b9188",
       "https://www.cnet.com/a/img/resize/eb23c30d6ac26524a688003a73ceda265de316e9/hub/2017/09/12/0a8401b6-fc6f-44e8-99fc-31ed49984fdf/apple-091217-steve-jobs-theater-3858.jpg?auto=webp&width=1200",
@@ -125,7 +119,6 @@ export const PROPERTIES = [
     pricePerNight: 1000.0,
     location: "1 Apple Park Way, Cupertino, CA 95014, United States",
     propertyImages: [
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/c5/91/46/apple-park-visitor-center.jpg?w=1200&h=-1&s=1",
       "https://rtlimages.apple.com/cmc/dieter/store/16_9/R824.png?resize=2880:1612&output-format=jpg&output-quality=85&interpolation=progressive-bicubic",
       "https://assets.arquitecturaviva.com/assets/uploads/obras/39368/av_15796.webp?h=0d3b9188",
       "https://www.cnet.com/a/img/resize/eb23c30d6ac26524a688003a73ceda265de316e9/hub/2017/09/12/0a8401b6-fc6f-44e8-99fc-31ed49984fdf/apple-091217-steve-jobs-theater-3858.jpg?auto=webp&width=1200",
@@ -144,7 +137,6 @@ export const PROPERTIES = [
     pricePerNight: 1000.0,
     location: "1 Apple Park Way, Cupertino, CA 95014, United States",
     propertyImages: [
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/c5/91/46/apple-park-visitor-center.jpg?w=1200&h=-1&s=1",
       "https://rtlimages.apple.com/cmc/dieter/store/16_9/R824.png?resize=2880:1612&output-format=jpg&output-quality=85&interpolation=progressive-bicubic",
       "https://assets.arquitecturaviva.com/assets/uploads/obras/39368/av_15796.webp?h=0d3b9188",
       "https://www.cnet.com/a/img/resize/eb23c30d6ac26524a688003a73ceda265de316e9/hub/2017/09/12/0a8401b6-fc6f-44e8-99fc-31ed49984fdf/apple-091217-steve-jobs-theater-3858.jpg?auto=webp&width=1200",
@@ -163,7 +155,6 @@ export const PROPERTIES = [
     pricePerNight: 1000.0,
     location: "1 Apple Park Way, Cupertino, CA 95014, United States",
     propertyImages: [
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/c5/91/46/apple-park-visitor-center.jpg?w=1200&h=-1&s=1",
       "https://rtlimages.apple.com/cmc/dieter/store/16_9/R824.png?resize=2880:1612&output-format=jpg&output-quality=85&interpolation=progressive-bicubic",
       "https://assets.arquitecturaviva.com/assets/uploads/obras/39368/av_15796.webp?h=0d3b9188",
       "https://www.cnet.com/a/img/resize/eb23c30d6ac26524a688003a73ceda265de316e9/hub/2017/09/12/0a8401b6-fc6f-44e8-99fc-31ed49984fdf/apple-091217-steve-jobs-theater-3858.jpg?auto=webp&width=1200",
@@ -182,7 +173,6 @@ export const PROPERTIES = [
     pricePerNight: 1000.0,
     location: "1 Apple Park Way, Cupertino, CA 95014, United States",
     propertyImages: [
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/c5/91/46/apple-park-visitor-center.jpg?w=1200&h=-1&s=1",
       "https://rtlimages.apple.com/cmc/dieter/store/16_9/R824.png?resize=2880:1612&output-format=jpg&output-quality=85&interpolation=progressive-bicubic",
       "https://assets.arquitecturaviva.com/assets/uploads/obras/39368/av_15796.webp?h=0d3b9188",
       "https://www.cnet.com/a/img/resize/eb23c30d6ac26524a688003a73ceda265de316e9/hub/2017/09/12/0a8401b6-fc6f-44e8-99fc-31ed49984fdf/apple-091217-steve-jobs-theater-3858.jpg?auto=webp&width=1200",
@@ -201,7 +191,6 @@ export const PROPERTIES = [
     pricePerNight: 1000.0,
     location: "1 Apple Park Way, Cupertino, CA 95014, United States",
     propertyImages: [
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/c5/91/46/apple-park-visitor-center.jpg?w=1200&h=-1&s=1",
       "https://rtlimages.apple.com/cmc/dieter/store/16_9/R824.png?resize=2880:1612&output-format=jpg&output-quality=85&interpolation=progressive-bicubic",
       "https://assets.arquitecturaviva.com/assets/uploads/obras/39368/av_15796.webp?h=0d3b9188",
       "https://www.cnet.com/a/img/resize/eb23c30d6ac26524a688003a73ceda265de316e9/hub/2017/09/12/0a8401b6-fc6f-44e8-99fc-31ed49984fdf/apple-091217-steve-jobs-theater-3858.jpg?auto=webp&width=1200",
@@ -220,7 +209,6 @@ export const PROPERTIES = [
     pricePerNight: 1000.0,
     location: "1 Apple Park Way, Cupertino, CA 95014, United States",
     propertyImages: [
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/c5/91/46/apple-park-visitor-center.jpg?w=1200&h=-1&s=1",
       "https://rtlimages.apple.com/cmc/dieter/store/16_9/R824.png?resize=2880:1612&output-format=jpg&output-quality=85&interpolation=progressive-bicubic",
       "https://assets.arquitecturaviva.com/assets/uploads/obras/39368/av_15796.webp?h=0d3b9188",
       "https://www.cnet.com/a/img/resize/eb23c30d6ac26524a688003a73ceda265de316e9/hub/2017/09/12/0a8401b6-fc6f-44e8-99fc-31ed49984fdf/apple-091217-steve-jobs-theater-3858.jpg?auto=webp&width=1200",
@@ -239,7 +227,6 @@ export const PROPERTIES = [
     pricePerNight: 1000.0,
     location: "1 Apple Park Way, Cupertino, CA 95014, United States",
     propertyImages: [
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/c5/91/46/apple-park-visitor-center.jpg?w=1200&h=-1&s=1",
       "https://rtlimages.apple.com/cmc/dieter/store/16_9/R824.png?resize=2880:1612&output-format=jpg&output-quality=85&interpolation=progressive-bicubic",
       "https://assets.arquitecturaviva.com/assets/uploads/obras/39368/av_15796.webp?h=0d3b9188",
       "https://www.cnet.com/a/img/resize/eb23c30d6ac26524a688003a73ceda265de316e9/hub/2017/09/12/0a8401b6-fc6f-44e8-99fc-31ed49984fdf/apple-091217-steve-jobs-theater-3858.jpg?auto=webp&width=1200",
@@ -258,7 +245,6 @@ export const PROPERTIES = [
     pricePerNight: 1000.0,
     location: "1 Apple Park Way, Cupertino, CA 95014, United States",
     propertyImages: [
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/c5/91/46/apple-park-visitor-center.jpg?w=1200&h=-1&s=1",
       "https://rtlimages.apple.com/cmc/dieter/store/16_9/R824.png?resize=2880:1612&output-format=jpg&output-quality=85&interpolation=progressive-bicubic",
       "https://assets.arquitecturaviva.com/assets/uploads/obras/39368/av_15796.webp?h=0d3b9188",
       "https://www.cnet.com/a/img/resize/eb23c30d6ac26524a688003a73ceda265de316e9/hub/2017/09/12/0a8401b6-fc6f-44e8-99fc-31ed49984fdf/apple-091217-steve-jobs-theater-3858.jpg?auto=webp&width=1200",
@@ -277,7 +263,6 @@ export const PROPERTIES = [
     pricePerNight: 1000.0,
     location: "1 Apple Park Way, Cupertino, CA 95014, United States",
     propertyImages: [
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/c5/91/46/apple-park-visitor-center.jpg?w=1200&h=-1&s=1",
       "https://rtlimages.apple.com/cmc/dieter/store/16_9/R824.png?resize=2880:1612&output-format=jpg&output-quality=85&interpolation=progressive-bicubic",
       "https://assets.arquitecturaviva.com/assets/uploads/obras/39368/av_15796.webp?h=0d3b9188",
       "https://www.cnet.com/a/img/resize/eb23c30d6ac26524a688003a73ceda265de316e9/hub/2017/09/12/0a8401b6-fc6f-44e8-99fc-31ed49984fdf/apple-091217-steve-jobs-theater-3858.jpg?auto=webp&width=1200",
@@ -296,7 +281,6 @@ export const PROPERTIES = [
     pricePerNight: 1000.0,
     location: "1 Apple Park Way, Cupertino, CA 95014, United States",
     propertyImages: [
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/c5/91/46/apple-park-visitor-center.jpg?w=1200&h=-1&s=1",
       "https://rtlimages.apple.com/cmc/dieter/store/16_9/R824.png?resize=2880:1612&output-format=jpg&output-quality=85&interpolation=progressive-bicubic",
       "https://assets.arquitecturaviva.com/assets/uploads/obras/39368/av_15796.webp?h=0d3b9188",
       "https://www.cnet.com/a/img/resize/eb23c30d6ac26524a688003a73ceda265de316e9/hub/2017/09/12/0a8401b6-fc6f-44e8-99fc-31ed49984fdf/apple-091217-steve-jobs-theater-3858.jpg?auto=webp&width=1200",
@@ -315,7 +299,6 @@ export const PROPERTIES = [
     pricePerNight: 1000.0,
     location: "1 Apple Park Way, Cupertino, CA 95014, United States",
     propertyImages: [
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/c5/91/46/apple-park-visitor-center.jpg?w=1200&h=-1&s=1",
       "https://rtlimages.apple.com/cmc/dieter/store/16_9/R824.png?resize=2880:1612&output-format=jpg&output-quality=85&interpolation=progressive-bicubic",
       "https://assets.arquitecturaviva.com/assets/uploads/obras/39368/av_15796.webp?h=0d3b9188",
       "https://www.cnet.com/a/img/resize/eb23c30d6ac26524a688003a73ceda265de316e9/hub/2017/09/12/0a8401b6-fc6f-44e8-99fc-31ed49984fdf/apple-091217-steve-jobs-theater-3858.jpg?auto=webp&width=1200",
@@ -334,7 +317,6 @@ export const PROPERTIES = [
     pricePerNight: 1000.0,
     location: "1 Apple Park Way, Cupertino, CA 95014, United States",
     propertyImages: [
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/c5/91/46/apple-park-visitor-center.jpg?w=1200&h=-1&s=1",
       "https://rtlimages.apple.com/cmc/dieter/store/16_9/R824.png?resize=2880:1612&output-format=jpg&output-quality=85&interpolation=progressive-bicubic",
       "https://assets.arquitecturaviva.com/assets/uploads/obras/39368/av_15796.webp?h=0d3b9188",
       "https://www.cnet.com/a/img/resize/eb23c30d6ac26524a688003a73ceda265de316e9/hub/2017/09/12/0a8401b6-fc6f-44e8-99fc-31ed49984fdf/apple-091217-steve-jobs-theater-3858.jpg?auto=webp&width=1200",
@@ -353,7 +335,6 @@ export const PROPERTIES = [
     pricePerNight: 1000.0,
     location: "1 Apple Park Way, Cupertino, CA 95014, United States",
     propertyImages: [
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/c5/91/46/apple-park-visitor-center.jpg?w=1200&h=-1&s=1",
       "https://rtlimages.apple.com/cmc/dieter/store/16_9/R824.png?resize=2880:1612&output-format=jpg&output-quality=85&interpolation=progressive-bicubic",
       "https://assets.arquitecturaviva.com/assets/uploads/obras/39368/av_15796.webp?h=0d3b9188",
       "https://www.cnet.com/a/img/resize/eb23c30d6ac26524a688003a73ceda265de316e9/hub/2017/09/12/0a8401b6-fc6f-44e8-99fc-31ed49984fdf/apple-091217-steve-jobs-theater-3858.jpg?auto=webp&width=1200",

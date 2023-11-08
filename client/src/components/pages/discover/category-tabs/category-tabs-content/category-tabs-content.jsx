@@ -6,10 +6,14 @@ import { Property } from "./property/property.jsx";
 
 export function CategoryTabsContent() {
   return (
-    <div>
+    <div className="pl-20 pr-20 pt-4">
       {CATEGORIES.map(({ name }) => {
         return (
-          <Tabs.Content key={name} value={name}>
+          <Tabs.Content
+            key={name}
+            value={name}
+            className="flex flex-row flex-wrap gap-6"
+          >
             {PROPERTIES.map((propertyData) => (
               <Property
                 key={propertyData.propertyId}

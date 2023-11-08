@@ -45,15 +45,15 @@ export function CategoryTabsList() {
 
   return (
     <div className="relative md:mt-6">
-      <div className="z-2 pointer-events-none absolute flex h-full w-full justify-between px-6 md:px-20">
+      <div className="z-1 pointer-events-none absolute flex h-full w-full justify-between px-6 md:px-20">
         <div
-          className={`hidden h-full w-16 items-center bg-gradient-to-l from-transparent to-[#fafafa] transition-opacity duration-200 md:flex ${
+          className={`hidden h-full w-16 items-center bg-gradient-to-l from-transparent to-[#ffffff] transition-opacity duration-200 md:flex ${
             isAtStart ? "opacity-0" : "opacity-100"
           }`}
         >
           <button
             onClick={() => handleArrowClick("left")}
-            className={`rounded-full border-[0.5px] border-solid border-[#d8d8d8] bg-[#ffffff] ${
+            className={`rounded-full border-[0.5px] border-solid border-[#d8d8d8] bg-[#ffffff] p-1 ${
               isAtStart ? "pointer-events-none" : "pointer-events-auto"
             }`}
           >
@@ -61,13 +61,13 @@ export function CategoryTabsList() {
           </button>
         </div>
         <div
-          className={`hidden h-full w-16 items-center justify-end bg-gradient-to-r from-transparent to-[#fafafa] transition-opacity duration-200 md:flex ${
+          className={`hidden h-full w-16 items-center justify-end bg-gradient-to-r from-transparent to-[#ffffff] transition-opacity duration-200 md:flex ${
             isAtEnd ? "opacity-0" : "opacity-100"
           }`}
         >
           <button
             onClick={() => handleArrowClick("right")}
-            className={`rounded-full border-[0.5px] border-solid border-[#d8d8d8] bg-[#ffffff] ${
+            className={`rounded-full border-[0.5px] border-solid border-[#d8d8d8] bg-[#ffffff] p-1 ${
               isAtEnd ? "pointer-events-none" : "pointer-events-auto"
             }`}
           >

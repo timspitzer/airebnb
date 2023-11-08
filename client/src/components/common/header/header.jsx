@@ -6,7 +6,7 @@ import { UserMenu } from "./user-menu/user-menu.jsx";
 
 export function Header() {
   return (
-    <div className="header sticky top-0 bg-neutral-50 shadow-md">
+    <div className="z-100 header sticky top-0 bg-white shadow-md">
       <div className="md:border-b-solid justify-between px-6 pt-4 md:flex md:border md:border-[#ebebeb] md:px-20 md:pb-4">
         <div className="hidden items-center md:flex ">
           <AirebnbLogo></AirebnbLogo>
