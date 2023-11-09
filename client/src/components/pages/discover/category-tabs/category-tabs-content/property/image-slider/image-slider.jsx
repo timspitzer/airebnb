@@ -35,8 +35,8 @@ export function ImageSlider({ images, areButtonsShown }) {
       <div className="grid-col-[1] grid-row-[1] flex items-center">
         <button
           onClick={() => handleArrowClick("left")}
-          className={`ml-3 rounded-full border-[0.5px] border-solid border-[#d8d8d8] bg-[#ffffff] p-1 ${
-            areButtonsShown ? "block" : "hidden"
+          className={`ml-3 rounded-full border-[0.5px] border-solid border-[#d8d8d8] bg-[#ffffff] p-1 transition-opacity  ${
+            areButtonsShown ? "opacity-100" : "opacity-0"
           }`}
         >
           <div className="i-radix-icons:chevron-left text-xl"></div>
@@ -46,8 +46,8 @@ export function ImageSlider({ images, areButtonsShown }) {
       <div className="grid-col-[3] grid-row-[1] flex items-center">
         <button
           onClick={() => handleArrowClick("right")}
-          className={`mr-3 rounded-full border-[0.5px] border-solid border-[#d8d8d8] bg-[#ffffff] p-1 ${
-            areButtonsShown ? "block" : "hidden"
+          className={`mr-3 rounded-full border-[0.5px] border-solid border-[#d8d8d8] bg-[#ffffff] p-1 transition-opacity  ${
+            areButtonsShown ? "opacity-100" : "opacity-0"
           }`}
         >
           <div className="i-radix-icons:chevron-right text-xl"></div>
