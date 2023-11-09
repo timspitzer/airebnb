@@ -3,7 +3,8 @@ import { useRef } from "react";
 export function ImageSlider({ images, areButtonsShown }) {
   const sliderRef = useRef(null);
 
-  const handleArrowClick = (direction) => {
+  const handleArrowClick = (event, direction) => {
+    event.stopPropagation();
     if (sliderRef.current) {
       const elementWidth = sliderRef.current.offsetWidth;
       const scrollDistance =
@@ -34,7 +35,7 @@ export function ImageSlider({ images, areButtonsShown }) {
       {/* BUTTON LEFT */}
       <div className="grid-col-[1] grid-row-[1] flex items-center">
         <button
-          onClick={() => handleArrowClick("left")}
+          onClick={(event) => handleArrowClick(event, "left")}
           className={`ml-3 rounded-full border-[0.5px] border-solid border-[#d8d8d8] bg-[#ffffff] p-1 transition-opacity  ${
             areButtonsShown ? "opacity-100" : "opacity-0"
           }`}
@@ -45,7 +46,7 @@ export function ImageSlider({ images, areButtonsShown }) {
       {/* BUTTON RIGHT  */}
       <div className="grid-col-[3] grid-row-[1] flex items-center">
         <button
-          onClick={() => handleArrowClick("right")}
+          onClick={(event) => handleArrowClick(event, "right")}
           className={`mr-3 rounded-full border-[0.5px] border-solid border-[#d8d8d8] bg-[#ffffff] p-1 transition-opacity  ${
             areButtonsShown ? "opacity-100" : "opacity-0"
           }`}

@@ -1,8 +1,8 @@
+import { Link, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 
 import { FormattedDate } from "../../../../../common/formatted-date/formatted-date.jsx";
 import { ImageSlider } from "./image-slider/image-slider.jsx";
-import { Link } from "react-router-dom";
 import { SearchDataContext } from "../../../../../../context/search-data-context.js";
 import { useHover } from "../../../../../../hooks/useHover.js";
 
@@ -14,12 +14,16 @@ export function Property({
   propertyImages,
 }) {
   const { searchData } = useContext(SearchDataContext);
-
   const [ref, areImageSliderButtonsShown] = useHover();
+  const navigate = useNavigate();
+
+  const handleClick = (event) => {
+    console.log("article click");
+    navigate(`rooms/${propertyId}`);
+  };
 
   return (
-    // <Link to={`rooms/${propertyId}`} className="decoration-none">
-    <article ref={ref}>
+    <article ref={ref} onClick={handleClick} className="hover:cursor-pointer">
       <ImageSlider
         images={propertyImages}
         areButtonsShown={areImageSliderButtonsShown}
@@ -36,6 +40,5 @@ export function Property({
         <span> night</span>
       </div>
     </article>
-    // </Link>
   );
 }
