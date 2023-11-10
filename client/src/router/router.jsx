@@ -7,8 +7,8 @@ import { Users } from "../components/pages/users/users.jsx";
 
 export const Router = () => {
   return (
-    // <BrowserRouter basename="/airebnb/">
-    <BrowserRouter>
+    <BrowserRouter basename="/airebnb/">
+      {/* <BrowserRouter> */}
       <Routes>
         <Route path={ROOT} element={<Discover />} />
         <Route path={ROOMS} element={<Rooms />} />
