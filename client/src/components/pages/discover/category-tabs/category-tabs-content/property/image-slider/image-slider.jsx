@@ -27,6 +27,7 @@ export function ImageSlider({ images, areButtonsShown }) {
         {images.map((image, i) => (
           <img
             key={i}
+            loading="lazy"
             src={image}
             className="h-full w-full flex-shrink-0 snap-center object-cover"
           ></img>
