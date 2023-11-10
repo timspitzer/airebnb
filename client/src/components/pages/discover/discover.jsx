@@ -10,7 +10,7 @@ import {
 } from "../../../reducer/search-data-reducer.js";
 
 import { CategoryTabs } from "./category-tabs/category-tabs.jsx";
-import { Footer } from "../../common/footer/Footer.jsx";
+import { Footer } from "../../common/footer/footer.jsx";
 import { SearchModal } from "../../common/search/search-modal/search-modal.jsx";
 import { useReducer } from "react";
 
