@@ -22,7 +22,7 @@ export function ImageSlider({ images, areButtonsShown }) {
       {/* IMAGES */}
       <div
         ref={sliderRef}
-        className="grid-col-[1/4] grid-row-[1] snap-type-x-mandatory flex overflow-x-scroll scroll-smooth"
+        className="grid-col-[1/4] grid-row-[1] flex overflow-x-scroll scroll-smooth [scroll-snap-type:x_mandatory]"
       >
         {images.map((image, i) => (
           <img
