@@ -17,13 +17,16 @@ export function Property({
   const [ref, areImageSliderButtonsShown] = useHover();
   const navigate = useNavigate();
 
-  const handleClick = (event) => {
-    console.log("article click");
+  const handleClick = () => {
     navigate(`rooms/${propertyId}`);
   };
 
   return (
-    <article ref={ref} onClick={handleClick} className="hover:cursor-pointer">
+    <article
+      ref={ref}
+      onClick={handleClick}
+      className="w-full hover:cursor-pointer sm:w-[calc(50%-0.75rem)] md:w-[calc(33.33%-1rem)]  lg:w-[calc(25%-1.125rem)]"
+    >
       <ImageSlider
         images={propertyImages}
         areButtonsShown={areImageSliderButtonsShown}

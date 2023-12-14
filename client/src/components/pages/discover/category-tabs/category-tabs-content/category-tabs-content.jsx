@@ -6,7 +6,7 @@ import { Property } from "./property/property.jsx";
 
 export function CategoryTabsContent() {
   return (
-    <div className="pl-20 pr-20 pt-4">
+    <div className="mx-6 mt-4 md:mx-20">
       {CATEGORIES.map(({ name }) => {
         return (
           <Tabs.Content

@@ -18,7 +18,7 @@ export function ImageSlider({ images, areButtonsShown }) {
   };
 
   return (
-    <div className="w-75 h-71 grid-cols-[auto 1fr auto] rounded-3 bg-gray grid overflow-hidden">
+    <div className="grid-cols-[auto 1fr auto] rounded-3 bg-gray mb-3 grid aspect-[1/0.95] w-full overflow-hidden">
       {/* IMAGES */}
       <div
         ref={sliderRef}
