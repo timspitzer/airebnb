@@ -1,10 +1,9 @@
-import { Link, useNavigate } from "react-router-dom";
-import { useContext, useState } from "react";
-
 import { FormattedDate } from "../../../../../common/formatted-date/formatted-date.jsx";
 import { ImageSlider } from "./image-slider/image-slider.jsx";
 import { SearchDataContext } from "../../../../../../context/search-data-context.js";
+import { useContext } from "react";
 import { useHover } from "../../../../../../hooks/useHover.js";
+import { useNavigate } from "react-router-dom";
 
 export function Property({
   propertyId,
